@@ -35,6 +35,7 @@ require IT_DIR . '/inc/login.php'; // Login screen customisation.
 require IT_DIR . '/inc/scripts-styles.php'; // Scripts and styles enqueue | dequeue.
 require IT_DIR . '/inc/class-svg-support.php'; // Adds support for SVG upload.
 require IT_DIR . '/inc/widgets.php'; // Sidebars and widgets.
+require IT_DIR . '/inc/custom-post-types/custom-breadcrumbs.php';
 
 if ( class_exists( 'WooCommerce' ) ) {
 	require IT_DIR . '/inc/woo.php'; // Woocommerce functions.

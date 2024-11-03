@@ -1,0 +1,21 @@
+.machine-info {
+ padding: rem(60 0);
+}
+
+.anchor-list {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: rem(10);
+
+ &__label {
+  padding-right: rem(10);
+ }
+
+ &__item {
+  padding: rem(10 13);
+  border: 1px solid $primary;
+  border-radius: rem(6);
+  margin-bottom: 0;
+ }
+}
