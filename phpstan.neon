@@ -1,0 +1,21 @@
+parameters:
+	parallel:
+		jobSize: 20
+		maximumNumberOfProcesses: 32
+		minimumNumberOfJobsPerProcess: 16
+	phpVersion: 80200
+	dynamicConstantNames:
+		- IT_DIR
+	bootstrapFiles:
+		- phpstan-constants.php
+	universalObjectCratesClasses:
+		- JsonDecodedClass
+	scanDirectories:
+		- ../../../
+	scanFiles:
+		- functions.php
+	level: 8
+	paths:
+		- woocommerce/
+		- inc/
+		- template-parts/

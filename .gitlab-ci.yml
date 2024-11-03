@@ -1,0 +1,101 @@
+stages:
+  - install
+  - build
+  - deploy
+
+install_packages:
+  stage: install
+  image: registry.tsks.me/deploy/docker/base:master
+  tags:
+    - docker
+  only:
+    refs:
+      - dev
+      - stage
+      - master
+    changes:
+      - package.json
+  script:
+    - ls -la
+    - npm i
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+  artifacts:
+    paths:
+      - node_modules
+
+build_assets:
+  stage: build
+  image: registry.tsks.me/deploy/docker/base:master
+  tags:
+    - docker
+  only:
+    refs:
+      - dev
+      - stage
+      - master
+  cache:
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - node_modules
+    policy: pull
+  script:
+    - ls -la
+    - gulp build
+  artifacts:
+    paths:
+      - dist
+
+deploy_wp_content_dev:
+  stage: deploy
+  before_script:
+    - apk update
+    - apk add --no-cache lftp
+  tags:
+    - docker
+  only:
+    refs:
+      - dev
+  script:
+    - ls -la
+    - lftp --version
+    - lftp -e "set ftp:ssl-allow no; open $FTP_HOST_DEV; user $FTP_USER_DEV $FTP_PASS_DEV; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_DEV; bye"
+    # FOR SFTP
+    # - lftp -e "set sftp:auto-confirm yes; open sftp://$FTP_HOST_DEV:22; user $FTP_USER_DEV $FTP_PASS_DEV; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_DEV --no-perms; bye"
+
+deploy_wp_content_stage:
+  stage: deploy
+  before_script:
+    - apk update
+    - apk add --no-cache lftp
+  tags:
+    - docker
+  only:
+    refs:
+      - stage
+  script:
+    - ls -la
+    - lftp --version
+    - lftp -e "set ftp:ssl-allow no; open $FTP_HOST_STAGE; user $FTP_USER_STAGE $FTP_PASS_STAGE; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_STAGE; bye"
+    # FOR SFTP
+    # - lftp -e "set sftp:auto-confirm yes; open sftp://$FTP_HOST_STAGE:22; user $FTP_USER_STAGE $FTP_PASS_STAGE; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_STAGE --no-perms; bye"
+
+
+deploy_wp_content_prod:
+  stage: deploy
+  before_script:
+    - apk update
+    - apk add --no-cache lftp
+  tags:
+    - docker
+  only:
+    refs:
+      - master
+  script:
+    - ls -la
+    - lftp --version
+    - lftp -e "set ftp:ssl-allow no; open $FTP_HOST_PROD; user $FTP_USER_PROD $FTP_PASS_PROD; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_PROD; bye"
+    # FOR SFTP
+    # - lftp -e "set sftp:auto-confirm yes; open sftp://$FTP_HOST_PROD:22; user $FTP_USER_PROD $FTP_PASS_PROD; mirror -x ^\node_modules/$ -x ^\vendor/$ -X .* -X .*/ --reverse --verbose --delete . $FTP_PATH_PROD --no-perms; bye"

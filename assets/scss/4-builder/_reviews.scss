@@ -1,0 +1,74 @@
+.reviews {
+	padding: rem(70 0);
+	position: relative;
+	@include min(lg) {
+		padding: rem(140 0);
+	}
+}
+
+.review-background {
+	position: absolute;
+	right: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: -1;
+
+	&:after {
+		content: '';
+		display: block;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		position: absolute;
+		background-color: rgba($secondary-charcoal, 0.9);
+	}
+
+	.flex-image {
+		z-index: 0;
+	}
+}
+
+.flex-image {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	object-fit: cover;
+}
+
+.wrapper-review {
+	background-color: $w;
+	padding: rem(45 20 40);
+	border-radius: 2px;
+}
+
+.personality-info {
+	display: flex;
+	font-size: 16px;
+}
+
+.personality-review {
+	margin-bottom: rem(34);
+	border-bottom: 3px solid $secondary-charcoal;
+}
+
+.personality-name {
+	margin-right: rem(5);
+	font-family: $font-heading;
+	font-weight: 500;
+}
+
+.quotes-svg {
+	margin-bottom: rem(40);
+	height: 39px;
+	width: 40px;
+	display: block;
+	margin-left: auto;
+}

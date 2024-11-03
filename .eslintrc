@@ -1,0 +1,16 @@
+{
+  "extends": [ "plugin:@wordpress/eslint-plugin/recommended" ],
+  "rules": {
+    "max-len": ["error", { "code": 200, "ignoreUrls": true }],
+    "camelcase": "off"
+  },
+  "globals": {
+    "jQuery": "readonly",
+    "wpApiSettings": "readonly",
+    "history": "readonly",
+    "location": "readonly",
+    "navigator": "readonly",
+    "lazyLoadInstance": "readonly",
+    "wc_single_product_params": "readonly"
+  }
+}
