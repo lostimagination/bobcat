@@ -177,7 +177,7 @@ gulp.task('toProd', function (done) {
  */
 gulp.task('actual-watch', function () {
 	browserSync.init({
-		proxy: 'http://localhost/bobcat/', // Change it to your localhost url.
+		proxy: 'https://bobcat-multisite.in:8890/', // Change it to your localhost url.
 		port: 3000,
 		notify: false,
 		files: ['./*.php', './**/*.php'],

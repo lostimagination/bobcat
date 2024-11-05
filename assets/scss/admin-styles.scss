@@ -21,6 +21,10 @@ $green-hover: darken($green, 8%);
 		width: 100% !important;
 		float: none !important;
 		margin-bottom: 7px !important;
+
+		.taxonomy-baumaschinen-type & {
+			width: auto !important;
+		}
 	}
 
 	> .acf-input {
