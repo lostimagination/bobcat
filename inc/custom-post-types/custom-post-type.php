@@ -54,6 +54,7 @@ function it_custom_init(): void {
 
 	register_post_type( 'reviews', $args );
 
+
 	// Taxonomy: Example Category.
 	register_taxonomy(
 		'example-category',

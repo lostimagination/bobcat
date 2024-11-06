@@ -16,27 +16,27 @@ import Swiper, {
 } from 'swiper/bundle';
 
 export const it_swiper = () => {
-	const sliders = document.querySelectorAll('.swiper-images');
+	const sliders = document.querySelectorAll('.slide-reviews');
 
 	if (sliders.length < 1) {
 		return;
 	}
 
 	sliders.forEach((slider) => {
+		const sliderWrapper = slider.closest('.review-slider-wrapper');
 		new Swiper(slider, {
 			loop: true,
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
-			},
+			slidesPerView: 3,
+			spaceBetween: 30,
+			autoplay: false,
 			pagination: {
-				el: slider.querySelector('.swiper-pagination'),
+				el: sliderWrapper.querySelector('.swiper-pagination'),
 				clickable: true,
 			},
 			navigation: {
 				enabled: true,
-				nextEl: slider.querySelector('.swiper-button-next'),
-				prevEl: slider.querySelector('.swiper-button-prev'),
+				nextEl: sliderWrapper.querySelector('.swiper-button-next'),
+				prevEl: sliderWrapper.querySelector('.swiper-button-prev'),
 			},
 			on: {
 				// lazy load images
@@ -46,6 +46,36 @@ export const it_swiper = () => {
 					} catch (e) {}
 				},
 			},
+		});
+
+		const sliders = document.querySelectorAll('.slider-jobs');
+
+		sliders.forEach((slider) => {
+			const sliderWrapper = slider.closest('.jobs-slider-wrapper');
+			new Swiper(slider, {
+				slidesPerView: 1,
+				spaceBetween: 20,
+				autoplay: false,
+				centeredSlides: true,
+				loop: true,
+				pagination: {
+					el: sliderWrapper.querySelector('.swiper-pagination'),
+					clickable: true,
+				},
+				navigation: {
+					enabled: true,
+					nextEl: sliderWrapper.querySelector('.swiper-button-next'),
+					prevEl: sliderWrapper.querySelector('.swiper-button-prev'),
+				},
+				on: {
+					// lazy load images
+					slideChange() {
+						try {
+							lazyLoadInstance.update();
+						} catch (e) {}
+					},
+				},
+			});
 		});
 	});
 };

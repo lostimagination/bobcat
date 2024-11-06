@@ -2,7 +2,7 @@
 $content = get_sub_field( 'content' );
 ?>
 
-<section class="advantages">
+<section class="advantages section">
 	<div class="container">
 		<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => '' ) ) ?>
 		<?php $content = get_sub_field( 'content' ); ?>
@@ -25,10 +25,9 @@ $content = get_sub_field( 'content' );
 							?>
 
 							<?php if ( $icon ) : ?>
-
 									<?php echo wp_get_attachment_image( $icon['id'], 'thumbnail', false, array( 'class' => 'icon-svg' ) ); ?>
-
 							<?php endif; ?>
+
 							<div class="advantage-content">
 								<?php if ( $title ) : ?>
 									<h5 class="advantage-content__title"><?php echo esc_html( $title ) ?></h5>

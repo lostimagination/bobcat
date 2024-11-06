@@ -1,0 +1,50 @@
+.counter {
+	.row + .row {
+		margin-top: 0;
+	}
+}
+
+.counter-paragraph {
+	margin-bottom: rem(40);
+}
+
+.counter-card {
+	border: 1px solid $main-black;
+	border-radius: 2px;
+	padding: rem(50 20 40);
+	height: 100%;
+
+	&__label {
+		text-transform: uppercase;
+		color: $main-black;
+		margin-bottom: rem(20);
+	}
+}
+
+.paragraph-card {
+	margin-bottom: 0;
+
+}
+
+.number-wrapper {
+	display: flex;
+	align-items: center;
+	font-size: 94px;
+	font-family: $font-heading;
+	font-weight: 500;
+	color: $main-black;
+	border-bottom: 4px solid $secondary-charcoal;
+	margin-bottom: rem(20);
+
+	p {
+		margin-bottom: 0;
+		margin-right: 5px;
+		font-size: 94px;
+	}
+}
+
+.button-center {
+	display: flex;
+	justify-content: center;
+	margin-top: rem(40);
+}

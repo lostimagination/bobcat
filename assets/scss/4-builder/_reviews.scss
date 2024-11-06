@@ -1,5 +1,12 @@
 .reviews {
 	padding: rem(70 0);
+	h2 {
+		margin-bottom: rem(40);
+	}
+}
+
+.review-top {
+	padding: rem(70 0);
 	position: relative;
 	@include min(lg) {
 		padding: rem(140 0);
@@ -51,18 +58,30 @@
 
 .personality-info {
 	display: flex;
-	font-size: 16px;
+	p{
+		margin-bottom: 0;
+	}
 }
 
 .personality-review {
-	margin-bottom: rem(34);
-	border-bottom: 3px solid $secondary-charcoal;
+	border-bottom: 2px solid $secondary-charcoal;
+	margin-bottom: rem(17);
+
+	p {
+		margin-bottom: rem(34);
+	}
+}
+
+.personality-name,
+.personality-position,
+.personality-company {
+	font-weight: 500;
+	font-size: rem(16);
 }
 
 .personality-name {
 	margin-right: rem(5);
 	font-family: $font-heading;
-	font-weight: 500;
 }
 
 .quotes-svg {
@@ -71,4 +90,76 @@
 	width: 40px;
 	display: block;
 	margin-left: auto;
+}
+
+.review-bottom{
+	padding: rem(60 0);
+	background-color: $main-black;
+	text-align: center;
+	text-transform: uppercase;
+	color: $w;
+	h2{
+		margin-bottom: 0;
+	}
+}
+
+.review-slider-wrapper {
+	position: relative;
+}
+.review-slider-wrapper {
+	.arrow-left,
+	.arrow-right {
+		background-color: $primary;
+		width: 60px;
+		height: 60px;
+		border-radius: 2px;
+		display: flex;
+		justify-content: flex-end;
+
+		svg {
+			height: 16px;
+			width: 44px;
+		}
+	}
+
+	.arrow-right {
+		justify-content: flex-start;
+		right: -90px;
+	}
+
+	.arrow-left {
+		left: -90px;
+	}
+
+	.swiper-pagination-bullets.swiper-pagination {
+		bottom: -50px;
+		gap: 30px;
+	}
+
+	.swiper-pagination-bullet {
+		position: relative;
+		width: 20px;
+		height:20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&:after{
+			position: static;
+			width: 6px;
+			height: 6px;
+		}
+
+	}
+	.swiper-pagination-bullet-active{
+		margin: 3px;
+		border: 1px solid  $primary;
+
+		&:after{
+			background-color: $primary;
+			width: 6px;
+			height: 6px;
+			transform: none;
+		}
+
+	}
 }
