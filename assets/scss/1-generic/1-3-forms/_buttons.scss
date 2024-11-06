@@ -24,7 +24,6 @@
 	}
 
 
-
 	&:hover,
 	&:focus,
 	&:active {
@@ -52,6 +51,10 @@
 			border-color: $main-black;
 			color: $w;
 		}
+	}
+
+	&-small {
+		padding: rem(0 30);
 	}
 
 	&-white {

@@ -1,37 +1,33 @@
 .advantages {
-	padding: rem(70 0);
-	@include min(lg) {
-		padding: rem(140 0);
-	}
-		.c-title {
-			margin-bottom: rem(40);
-		}
-	}
-
-	.content-margin {
+	.c-title {
 		margin-bottom: rem(40);
-		font-size: rem(20);
+	}
+}
+
+.content-margin {
+	margin-bottom: rem(40);
+	font-size: rem(20);
+}
+
+.advantage {
+	display: flex;
+	height: 100%;
+	border-bottom: 4px solid $secondary-charcoal;
+}
+
+.icon-svg {
+	width: 60px;
+	height: 60px;
+	margin-right: rem(20);
+}
+
+.advantage-content {
+	&__title {
+		margin-bottom: rem(7);
 	}
 
-	.advantage {
-		display: flex;
-		height: 100%;
-		border-bottom: 4px solid $secondary-charcoal;
+	&__paragraph {
+		font-size: rem(16);
 	}
-
-	.icon-svg {
-		width: 60px;
-		height: 60px;
-		margin-right: rem(20);
-	}
-
-	.advantage-content {
-		&__title {
-			margin-bottom: rem(7);
-		}
-
-		&__paragraph {
-			font-size: rem(16);
-		}
-	}
+}
 

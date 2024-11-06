@@ -1,0 +1,44 @@
+.job {
+	background-color: $main-black;
+
+	.c-title {
+		color: $w;
+		margin-bottom: rem(20);
+	}
+}
+
+.job-info {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	align-items: flex-start;
+	padding: rem(60 0 40 40);
+}
+
+.job-paragraph {
+	color: $w;
+	flex-grow: 1;
+}
+
+.job-image {
+	position: relative;
+
+	&:after {
+		padding-bottom: 66.67%;
+		content: '';
+		display: block;
+	}
+}
+
+.jobs-slider-wrapper .slider-jobs {
+	overflow: visible;
+
+	.swiper-slide {
+		opacity: 0.3;
+		transition: opacity .2s ease-in;
+	}
+
+	.swiper-slide-active {
+		opacity: 1;
+	}
+}

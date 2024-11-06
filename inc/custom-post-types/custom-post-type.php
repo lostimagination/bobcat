@@ -88,29 +88,24 @@ function it_custom_init(): void {
 
 	// Taxonomy registration with corrected rewrite rules
 	register_taxonomy(
-		'baumaschinen-type',
-		array('baumaschinen'),
+		'example-category',
+		array( 'example' ), /* name of CPT */
 		array(
 			'labels'            => array(
-				'name'          => esc_html__('Baumaschinen Categories', 'bobcat'),
-				'singular_name' => esc_html__('Baumaschinen Category', 'bobcat'),
-				'add_new_item'  => esc_html__('Add New Category', 'bobcat'),
+				'name'          => esc_html__( 'Example Categories', 'bobcat' ),
+				'singular_name' => esc_html__( 'Example Category', 'bobcat' ),
+				'add_new_item'  => esc_html__( 'Add New Category', 'bobcat' ),
 			),
-			'hierarchical'      => true,
+			'hierarchical'      => true,     /* if this is true, it acts like categories */
 			'show_admin_column' => true,
 			'show_ui'           => true,
 			'query_var'         => true,
-			'show_in_rest'      => true,
-			'rewrite'           => array(
-				'slug'         => 'baumaschinen',
-				'with_front'   => false,
-				'hierarchical' => true
-			)
+			'rewrite'           => array( 'slug' => 'example-category' ),
 		)
 	);
 }
 
-add_action('init', 'it_custom_init');
+add_action( 'init', 'it_custom_init' );
 
 /**
  * Custom permalink structure for baumaschinen posts

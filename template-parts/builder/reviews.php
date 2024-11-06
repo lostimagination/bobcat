@@ -4,17 +4,20 @@ $paragraph        = get_sub_field( 'paragraph' );
 $background_image = get_sub_field( 'background_image' );
 ?>
 
-<section class="reviews">
-	<?php if ( $background_image ) : ?>
-	<div class="review-background">
-		<?php echo wp_get_attachment_image( $background_image['id'], 'large', false, array( 'class' => 'flex-image' ) ); ?>
-	</div>
-	<?php endif; ?>
-	<div class="container">
-		<?php if ( $title_section ) : ?>
-			<div><?php echo wp_kses_post( $title_section ) ?></div>
+<section class="reviews section">
+	<div class="review-top">
+		<?php if ( $background_image ) : ?>
+			<div class="review-background">
+				<?php echo wp_get_attachment_image( $background_image['id'], 'large', false, array( 'class' => 'flex-image' ) ); ?>
+			</div>
 		<?php endif; ?>
-		<div class="row">
+		<div class="container">
+			<?php if ( $title_section ) : ?>
+				<div>
+					<?php echo wp_kses_post( $title_section ) ?>
+				</div>
+			<?php endif; ?>
+
 			<?php
 			$args = array(
 				'post_type'      => 'reviews',
@@ -30,43 +33,61 @@ $background_image = get_sub_field( 'background_image' );
 			<?php $the_query = new WP_Query( $args ); ?>
 
 			<?php if ( $the_query->have_posts() ) : ?>
+				<div class="review-slider-wrapper">
+					<div class="swiper slide-reviews">
+						<div class="swiper-wrapper">
+							<!-- the loop -->
+							<?php while ( $the_query->have_posts() ) :
+								$the_query->the_post(); ?>
 
-				<!-- the loop -->
-				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="col-lg-4">
-						<?php
-						$position = get_field( 'position' );
-						$company  = get_field( 'company' );
-						?>
-						<div class="wrapper-review">
-							<svg class="quotes-svg">
-								<use xlink:href="#quotes"></use>
-							</svg>
+								<div class="swiper-slide">
+									<?php
+									$position = get_field( 'position' );
+									$company  = get_field( 'company' );
+									?>
+									<div class="wrapper-review">
+										<svg class="quotes-svg">
+											<use xlink:href="#quotes"></use>
+										</svg>
 
-							<div class="personality-review"><?php the_content(); ?></div>
-							<div class="personality-info">
-								<p class="personality-name"><?php the_title(); ?></p>
+										<div class="personality-review"><?php the_content(); ?></div>
+										<div class="personality-info">
+											<p class="personality-name"><?php the_title(); ?></p>
 
-								<?php if ( $position ) : ?>
-									<p><?php echo $position ?></p>
-								<?php endif; ?>
+											<?php if ( $position ) : ?>
+												<p class="personality-position"><?php echo esc_html($position)  ?></p>
+											<?php endif; ?>
 
-								<?php if ( $company ) : ?>
-									<p><?php echo $company ?></p>
-								<?php endif; ?>
-							</div>
+											<?php if ( $company ) : ?>
+												<p class="personality-company"><?php echo esc_html($company) ?></p>
+											<?php endif; ?>
+										</div>
+									</div>
+								</div>
+							<?php endwhile; ?>
+							<!-- end of the loop -->
+							<?php wp_reset_postdata(); ?>
 						</div>
 					</div>
-				<?php endwhile; ?>
-				<!-- end of the loop -->
-				<?php wp_reset_postdata(); ?>
+					<div class="swiper-button-next arrow-right">
+						<svg>
+							<use xlink:href="#slider-arrow-right"></use>
+						</svg>
+					</div>
+					<div class="swiper-button-prev arrow-left">
+						<svg>
+							<use xlink:href="#slider-arrow-left"></use>
+						</svg>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
 			<?php endif; ?>
 		</div>
-
 	</div>
-
 	<?php if ( $paragraph ) : ?>
-		<div><?php echo wp_kses_post( $paragraph ) ?></div>
+		<div class="review-bottom">
+			<?php echo wp_kses_post( $paragraph ) ?>
+		</div>
 	<?php endif; ?>
-
 </section>
+
