@@ -1,0 +1,28 @@
+.mech-rent-card {
+ color: $w;
+ background-color: $b;
+
+ h2 {
+  color: $w;
+ }
+}
+
+.mech-rent__image {
+ position: relative;
+ width: 100%;
+ height: 100%;
+
+ &:after {
+  display: block;
+  content: '';
+  padding-bottom: 150%;
+ }
+}
+
+.mech-rent__info {
+ padding: rem(60 40 60 10);
+
+ ul {
+  margin: rem(40 0);
+ }
+}

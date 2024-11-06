@@ -491,6 +491,321 @@
                     "acfe_flexible_settings_size": "medium",
                     "acfe_flexible_modal_edit_size": false,
                     "acfe_flexible_category": false
+                },
+                "layout_672a0200439d6": {
+                    "key": "layout_672a0200439d6",
+                    "name": "anchors_list",
+                    "label": "Anchors list",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a021f439d9",
+                            "label": "Anchors list clone",
+                            "name": "anchors_list_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a01bea3952"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a06b891234": {
+                    "key": "layout_672a06b891234",
+                    "name": "machine_review",
+                    "label": "Machine review",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a06c591237",
+                            "label": "machine review clone",
+                            "name": "machine_review_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a062dc272e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a0e157a135": {
+                    "key": "layout_672a0e157a135",
+                    "name": "mech_features",
+                    "label": "Mech features",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a0e1c7a138",
+                            "label": "Mech features clone",
+                            "name": "mech_features_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a0dba84576"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a46247330a": {
+                    "key": "layout_672a46247330a",
+                    "name": "mech_rent",
+                    "label": "Mech rent",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a462a7330d",
+                            "label": "Mech rent clone",
+                            "name": "mech_rent_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a45737e031"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a46427330e": {
+                    "key": "layout_672a46427330e",
+                    "name": "services",
+                    "label": "Services",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a464873311",
+                            "label": "Services clone",
+                            "name": "services_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a45d625d89"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a4ea9623fe": {
+                    "key": "layout_672a4ea9623fe",
+                    "name": "mech_downloads",
+                    "label": "Mech downloads",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a4eb062401",
+                            "label": "Downloads clone",
+                            "name": "downloads_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a46d625d90"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
+                },
+                "layout_672a5b19f39b8": {
+                    "key": "layout_672a5b19f39b8",
+                    "name": "machines_overview",
+                    "label": "Machines overview",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_672a5b21f39bb",
+                            "label": "Machines overview clone",
+                            "name": "machines_overview_clone",
+                            "aria-label": "",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "group_672a5a294843e"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0,
+                            "acfe_seamless_style": 0,
+                            "acfe_clone_modal": 0,
+                            "acfe_clone_modal_close": 0,
+                            "acfe_clone_modal_button": "",
+                            "acfe_clone_modal_size": "large"
+                        }
+                    ],
+                    "min": "",
+                    "max": "",
+                    "acfe_flexible_thumbnail": "",
+                    "acfe_flexible_render_template": false,
+                    "acfe_flexible_render_style": false,
+                    "acfe_flexible_render_script": false,
+                    "acfe_flexible_settings": false,
+                    "acfe_flexible_settings_size": "medium",
+                    "acfe_flexible_modal_edit_size": false,
+                    "acfe_flexible_category": false
                 }
             },
             "min": "",
@@ -515,6 +830,13 @@
                 "operator": "==",
                 "value": "baumaschinen-type"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "baumaschinen"
+            }
         ]
     ],
     "menu_order": 0,
@@ -533,5 +855,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1730802811
+    "modified": 1730829121
 }

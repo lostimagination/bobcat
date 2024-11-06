@@ -1,0 +1,28 @@
+.star-rating {
+ display: flex;
+ align-items: center;
+ gap: rem(10);
+ justify-content: center;
+ margin-bottom: rem(20);
+
+ .star {
+  fill: $primary;
+  width: rem(40);
+  height: rem(40);
+ }
+
+ .empty-star {
+  stroke: $primary;
+  fill: none;
+ }
+}
+
+.rating-block {
+ padding: rem(20 16);
+ text-align: center;
+ border: 1px solid $secondary-tan;
+
+ @include min(lg) {
+  padding: rem(40 32);
+ }
+}

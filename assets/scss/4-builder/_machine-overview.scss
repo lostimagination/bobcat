@@ -1,0 +1,36 @@
+.machine-wide-card {
+ position: relative;
+ border: 1px solid $light-grey;
+ border-radius: 2px;
+ padding: rem(20 50);
+ margin-bottom: rem(16);
+
+ &__image {
+  position: relative;
+  @include min(lg) {
+   margin-right: rem(50);
+  }
+
+  &:after {
+   display: block;
+   content: '';
+   padding-bottom: 100%;
+  }
+ }
+
+ &__info {
+  border-left: 2px solid $secondary-charcoal;
+  padding: rem(20 30);
+  min-height: 100%;
+ }
+
+ &__link {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: rem(78);
+  background-color: rgba($secondary-grey , 0.2);
+ }
+}

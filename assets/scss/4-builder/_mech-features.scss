@@ -1,0 +1,65 @@
+section.section-border-top {
+ padding-top: 0;
+
+ > .container {
+  padding-top: rem(50);
+  border-top: 1px solid $secondary-tan;
+
+  @include min(lg) {
+   padding-top: rem(70);
+  }
+ }
+}
+
+.m-features-accordion {
+ margin-bottom: rem(40);
+}
+
+.m-features-accordion-item {
+ margin-bottom: rem(10);
+}
+
+.m-features-accordion__title {
+ background-color: $light-grey;
+ font-weight: 700;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: rem(20);
+ border-radius: 2px;
+ margin-bottom: 0;
+
+ svg {
+  fill: $primary;
+ }
+}
+
+.m-feature-content {
+ border-radius: 2px;
+ border: 1px solid $light-grey;
+}
+
+.m-feature-content-item {
+ padding: rem(20);
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ &__name {
+  border-left: 5px solid $primary;
+  padding-left: rem(8);
+  line-height: rem(20);
+ }
+
+ @include min(lg) {
+  padding-right: rem(100);
+ }
+}
+
+.m-feature-content-item:not(:first-of-type) {
+ border-top: 1px solid $light-grey;
+}
+
+.m-feature-content-item:nth-of-type(even) {
+ background-color: $accordion-row-grey;
+}

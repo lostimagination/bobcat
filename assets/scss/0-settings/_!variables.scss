@@ -8,6 +8,9 @@ $primary: $main-red;
 $primary-hover: darken($primary, 10%);
 $secondary: #38bdf8;
 $secondary-hover: darken($secondary, 8%);
+$light-grey: #EDEEEF;
+$bg-grey: #F6F6F6;
+$accordion-row-grey: #FBFBFB;
 
 // Bootstrap v5.3.0 fix (dark mode support)
 $enable-dark-mode: false;
@@ -16,7 +19,7 @@ $b: $main-black;
 $w: #fff;
 $white-50: rgba($w, 0.5);
 $grey: #A3AAAE;
-$grey-border: #d0d0d0;
+$grey-border: $light-grey;
 
 $red: #dc3232;
 $green: #6dc22e;

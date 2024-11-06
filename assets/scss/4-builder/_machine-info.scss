@@ -18,4 +18,14 @@
   border-radius: rem(6);
   margin-bottom: 0;
  }
+
+ &--single {
+  padding-bottom: rem(20);
+  border-bottom: 1px solid $secondary-tan;
+
+  .anchor-list__item:first-of-type {
+   background-color: $light-grey;
+   border-color: $secondary-tan;
+  }
+ }
 }

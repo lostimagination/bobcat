@@ -1,0 +1,49 @@
+.machine-intro {
+ padding: rem(45 0 100);
+}
+
+.machine-post-image {
+ position: relative;
+ border: 1px solid $light-grey;
+
+ &:after {
+  content: '';
+  padding-bottom: 72%;
+  display: block;
+ }
+}
+
+.machine-specs {
+ list-style-type: none;
+ padding-left: 0;
+ margin-left: 0;
+ margin-bottom: rem(50);
+
+ @include min(lg) {
+  margin-bottom: rem(112);
+ }
+}
+
+.machine-specs-item {
+ display: flex;
+ gap: rem(16);
+ margin-bottom: rem(10);
+
+ &__icon {
+  width: rem(20);
+  height: rem(20);
+ }
+}
+
+.btn-group {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 15px;
+ row-gap: 15px;
+}
+
+.section-p-small {
+ @include min(lg) {
+  padding: rem(60 0);
+ }
+}

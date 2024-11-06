@@ -66,3 +66,34 @@
 		@extend %link;
 	}
 }
+
+.list-border {
+	list-style-type: none;
+	margin-left: 0;
+	padding-left: 0;
+	li {
+		line-height: rem(20);
+		margin-bottom: rem(18);
+		display: flex;
+		gap: rem(8);
+
+		&:before {
+			content: '';
+			width: 5px;
+			height: 12px;
+			margin-top: 4px;
+			background-color: $primary;
+			display: block;
+			flex-shrink: 0;
+		}
+	}
+
+	&--small {
+
+		li {
+			font-size: rem(16);
+			margin-bottom: rem(10);
+			line-height: 1.3;
+		}
+	}
+}

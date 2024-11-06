@@ -1,5 +1,9 @@
 .m-text-columns {
-	.row {
-		row-gap: rem(50);
-	}
+ .row {
+  row-gap: rem(50);
+ }
+}
+
+.section-bg-grey {
+ background-color: $bg-grey;
 }

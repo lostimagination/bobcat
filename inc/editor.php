@@ -128,6 +128,12 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'wrapper'  => false,
 					),
 					array(
+						'title'    => 'Button (small)',
+						'selector' => 'a',
+						'classes'  => 'btn btn-small',
+						'wrapper'  => false,
+					),
+					array(
 						'title'    => 'Button Group',
 						'classes'  => 'btn-group',
 						'selector' => 'p',
@@ -153,6 +159,12 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'title'    => 'List (numbered)',
 						'classes'  => 'list-number',
 						'selector' => 'ol',
+						'wrapper'  => false,
+					),
+					array(
+						'title'    => 'List (border left)',
+						'classes'  => 'list-border',
+						'selector' => 'ul',
 						'wrapper'  => false,
 					),
 				),
