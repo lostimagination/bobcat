@@ -8,7 +8,7 @@
             "name": "background_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Recommended image size : 1920 x 830",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -98,5 +98,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1730587327
+    "modified": 1730749281
 }

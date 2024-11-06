@@ -171,3 +171,11 @@ iframe[src*="vimeo"] {
 		}
 	}
 }
+
+.section {
+	padding: rem(50 0);
+
+	@include min(lg) {
+		padding: rem(70 0);
+	}
+}
