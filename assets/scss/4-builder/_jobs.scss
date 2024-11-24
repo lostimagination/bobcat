@@ -1,18 +1,36 @@
+.jobs {
+	overflow: hidden;
+}
+
 .job {
 	background-color: $main-black;
 
 	.c-title {
 		color: $w;
-		margin-bottom: rem(20);
+		margin-bottom: rem(30);
+		@include min(lg) {
+			margin-bottom: rem(20);
+		}
 	}
 }
 
 .job-info {
-	display: flex;
-	flex-direction: column;
+	display: block;
 	height: 100%;
-	align-items: flex-start;
-	padding: rem(60 0 40 40);
+	padding: rem(40 10);
+
+	@include min(md) {
+		padding: rem(60 10 40 40);
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.btn-small {
+		@include max(md) {
+			display: flex;
+		}
+	}
 }
 
 .job-paragraph {
@@ -22,11 +40,19 @@
 
 .job-image {
 	position: relative;
+	height: 100%;
+	object-fit: cover;
 
 	&:after {
 		padding-bottom: 66.67%;
 		content: '';
 		display: block;
+		@include min(md) {
+			padding-bottom: 98.67%;
+		}
+		@include min(lg) {
+			padding-bottom: 66.67%;
+		}
 	}
 }
 
@@ -40,5 +66,12 @@
 
 	.swiper-slide-active {
 		opacity: 1;
+	}
+
+	.swiper-pagination-bullet-active,
+	.swiper-pagination-bullet {
+		&:after {
+			background-color: $main-black;
+		}
 	}
 }

@@ -22,10 +22,12 @@
 				height: rem(36);
 				background-color: $w;
 				color: $b;
-				font-size: rem(16);
+				font-size: rem(18);
+				font-weight: 500;
+				font-family: $font-heading;
 				line-height: 1;
-				border: 1px solid $b;
-				border-radius: $radius;
+				border: 2px solid $primary;
+				border-radius: 2px;
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
@@ -33,15 +35,15 @@
 
 				&.current {
 					&:not(.dots) {
-						background-color: $primary;
-						color: $w;
-						border-color: $primary;
+						background-color: $w;
+						color: $secondary-grey;
+						border-color: $secondary-grey;
 					}
 				}
 
 				&:hover {
 					background-color: $w;
-					color: $primary;
+					color: $main-black;
 					border-color: $primary;
 				}
 			}

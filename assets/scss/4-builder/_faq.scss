@@ -1,10 +1,26 @@
 .m-faq {
+	background-color: $background-grey;
+	padding: rem(70 0);
+	@include min(lg) {
+		padding: rem(140 0);
+		h2 {
+			color: $main-black;
+		}
+		.faq-paragraph {
+			margin-bottom: 0;
+			padding-bottom: rem(40);
+		}
+	}
+
 	&__item {
-		border: 1px solid $grey-border;
+		border-bottom: 1px solid $main-black;
 		transition: border-color $time;
 
 		&:not(:last-child) {
-			margin-bottom: rem(10);
+			margin-bottom: rem(0);
+		}
+		&:first-child{
+			border-top: 1px solid $main-black;
 		}
 
 		&.is-open,
@@ -12,12 +28,27 @@
 			border-color: $b;
 		}
 
+		.faq-minus {
+			display: none;
+		}
+
+		&.is-open {
+			.faq-plus {
+				display: none;
+			}
+
+			.faq-minus {
+				display: block;
+			}
+		}
+
 		&-title {
 			display: flex;
 			justify-content: space-between;
 			gap: rem(16);
-			padding: rem(20);
+			padding: rem(30 30 30 0);
 			margin: 0;
+			color: $main-black;
 
 			svg {
 				flex-shrink: 0;
@@ -25,7 +56,13 @@
 		}
 
 		&-content {
-			padding: rem(0 20 20);
+			padding: rem(0 70 30 0);
+
+			p {
+				font-size: rem(16);
+			}
 		}
 	}
 }
+
+

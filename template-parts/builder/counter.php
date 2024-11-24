@@ -20,7 +20,7 @@ $link_section  = get_sub_field( 'link_section' )
 		<div class="row">
 			<?php if ( have_rows( 'counter_card' ) ) : ?>
 				<?php while ( have_rows( 'counter_card' ) ) : the_row(); ?>
-					<div class="col-lg-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="counter-card">
 							<?php
 							$label          = get_sub_field( 'label' );

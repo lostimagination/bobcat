@@ -1,0 +1,42 @@
+.history_line{
+	.c-title{
+		margin-bottom: rem(30);
+		color: $main-black;
+	}
+}
+.card-history{
+	display: flex;
+}
+.year{
+	display: flex;
+flex-direction: column;
+	position: relative;
+	font-size: rem(140);
+	font-family: $font-heading;
+	font-weight: 500;
+	color: $main-black;
+	line-height: 1.1;
+	border-bottom: 4px solid $main-red;
+	padding: rem(45 20 50 20);
+	margin-bottom: 0;
+ &:after{
+	 content: '';
+	 display: block;
+	 position: absolute;
+	 bottom: -12px;
+	 left: 20px;
+	 width: 22px;
+	 height: 22px;
+	 border: 1px solid $main-red;
+	 border-radius: 50%;
+	 background-color: $main-red;
+ }
+}
+.our-history{
+	width: calc(100% / 5);
+
+}
+.history-info{
+	padding: rem(30 20 );
+}
+

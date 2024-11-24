@@ -1,12 +1,16 @@
 .reviews {
-	padding: rem(70 0);
+	padding: 0;
+
 	h2 {
-		margin-bottom: rem(40);
+		margin-bottom: rem(30);
+		@include min(md) {
+			margin-bottom: rem(40);
+		}
 	}
 }
 
 .review-top {
-	padding: rem(70 0);
+	padding: rem(80 0);
 	position: relative;
 	@include min(lg) {
 		padding: rem(140 0);
@@ -54,21 +58,36 @@
 	background-color: $w;
 	padding: rem(45 20 40);
 	border-radius: 2px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
-.personality-info {
+.personality-wrapper {
 	display: flex;
-	p{
-		margin-bottom: 0;
-	}
+	flex-direction: column;
+	width: 100%;
+	flex-grow: 1;
 }
 
 .personality-review {
 	border-bottom: 2px solid $secondary-charcoal;
 	margin-bottom: rem(17);
+	flex-grow: 1;
+	height: 100%;
 
 	p {
 		margin-bottom: rem(34);
+
+	}
+}
+
+.personality-info {
+	display: flex;
+	flex-wrap: wrap;
+
+	p {
+		margin-bottom: 0;
 	}
 }
 
@@ -92,21 +111,33 @@
 	margin-left: auto;
 }
 
-.review-bottom{
+.review-bottom {
 	padding: rem(60 0);
 	background-color: $main-black;
 	text-align: center;
 	text-transform: uppercase;
 	color: $w;
-	h2{
+
+	h2 {
 		margin-bottom: 0;
 	}
 }
 
 .review-slider-wrapper {
 	position: relative;
+	margin-right: -15px;
+
+	@include min(md) {
+		margin-right: 0;
+	}
+
+	.swiper-slide {
+		height: auto;
+	}
 }
-.review-slider-wrapper {
+
+.review-slider-wrapper,
+.jobs-slider-wrapper {
 	.arrow-left,
 	.arrow-right {
 		background-color: $primary;
@@ -123,12 +154,22 @@
 	}
 
 	.arrow-right {
-		justify-content: flex-start;
-		right: -90px;
+		display: none;
+		@include min(xl) {
+			display: flex;
+			justify-content: flex-start;
+			right: -80px;
+		}
+
 	}
 
 	.arrow-left {
-		left: -90px;
+		display: none;
+		@include min(xl) {
+			display: flex;
+			left: -80px;
+		}
+
 	}
 
 	.swiper-pagination-bullets.swiper-pagination {
@@ -139,27 +180,27 @@
 	.swiper-pagination-bullet {
 		position: relative;
 		width: 20px;
-		height:20px;
+		height: 20px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		&:after{
+
+		&:after {
 			position: static;
 			width: 6px;
 			height: 6px;
 		}
-
 	}
-	.swiper-pagination-bullet-active{
-		margin: 3px;
-		border: 1px solid  $primary;
 
-		&:after{
+	.swiper-pagination-bullet-active {
+		margin: 3px;
+		border: 1px solid $primary;
+
+		&:after {
 			background-color: $primary;
 			width: 6px;
 			height: 6px;
 			transform: none;
 		}
-
 	}
 }

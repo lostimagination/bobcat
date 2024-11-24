@@ -6,7 +6,7 @@ $intro_image = get_sub_field( 'intro_image' );
 <section class="intro">
 	<div class="container container-large">
 		<div class="row">
-			<div class="col-lg-5">
+			<div class="col-md-6 col-lg-5">
 				<div class="info-wrapper">
 					<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => 'title-white' ) ) ?>
 
@@ -24,7 +24,7 @@ $intro_image = get_sub_field( 'intro_image' );
 					<?php endif; ?>
 				</div>
 			</div>
-			<div class="col-lg-7">
+			<div class="col-md-6 col-lg-7">
 				<?php if ( $intro_image ) : ?>
 				<div class="intro-image-wrapper">
 					<?php echo wp_get_attachment_image( $intro_image['id'], 'large', false, array( 'class' => 'intro-image' ) ); ?>

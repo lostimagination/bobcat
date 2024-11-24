@@ -1,10 +1,9 @@
 <?php
 $title_section    = get_sub_field( 'title_section' );
-$paragraph        = get_sub_field( 'paragraph' );
 $background_image = get_sub_field( 'background_image' );
 ?>
 
-<section class="reviews section">
+<section class="reviews">
 	<div class="review-top">
 		<?php if ( $background_image ) : ?>
 			<div class="review-background">
@@ -22,9 +21,7 @@ $background_image = get_sub_field( 'background_image' );
 			$args = array(
 				'post_type'      => 'reviews',
 				'order'          => 'ASC',
-				// ASC, DESC
 				'orderby'        => 'menu_order',
-				// none, ID, author, title, name, date, modified, parent, rand, comment_count, menu_order, meta_value, meta_value_num, title menu_order, post__in
 				'posts_per_page' => - 1,
 
 			);
@@ -49,18 +46,19 @@ $background_image = get_sub_field( 'background_image' );
 										<svg class="quotes-svg">
 											<use xlink:href="#quotes"></use>
 										</svg>
+										<div class="personality-wrapper">
+											<div class="personality-review"><?php the_content(); ?></div>
+											<div class="personality-info">
+												<p class="personality-name"><?php the_title(); ?></p>
 
-										<div class="personality-review"><?php the_content(); ?></div>
-										<div class="personality-info">
-											<p class="personality-name"><?php the_title(); ?></p>
+												<?php if ( $position ) : ?>
+													<p class="personality-position"><?php echo esc_html( $position ) ?></p>
+												<?php endif; ?>
 
-											<?php if ( $position ) : ?>
-												<p class="personality-position"><?php echo esc_html($position)  ?></p>
-											<?php endif; ?>
-
-											<?php if ( $company ) : ?>
-												<p class="personality-company"><?php echo esc_html($company) ?></p>
-											<?php endif; ?>
+												<?php if ( $company ) : ?>
+													<p class="personality-company"><?php echo esc_html( $company ) ?></p>
+												<?php endif; ?>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -84,10 +82,5 @@ $background_image = get_sub_field( 'background_image' );
 			<?php endif; ?>
 		</div>
 	</div>
-	<?php if ( $paragraph ) : ?>
-		<div class="review-bottom">
-			<?php echo wp_kses_post( $paragraph ) ?>
-		</div>
-	<?php endif; ?>
 </section>
 
