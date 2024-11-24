@@ -3,6 +3,27 @@
     "title": "Module: Intro",
     "fields": [
         {
+            "key": "field_672f83360dccc",
+            "label": "Background type",
+            "name": "background_type",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 0,
+            "ui_on_text": "Black",
+            "ui_off_text": "Red",
+            "ui": 1
+        },
+        {
             "key": "field_6724e49954457",
             "label": "Title section",
             "name": "title_section",
@@ -121,5 +142,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1730485870
+    "modified": 1731167058
 }

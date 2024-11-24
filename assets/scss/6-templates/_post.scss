@@ -1,31 +1,138 @@
 .post {
-	&-thumbnail {
-		margin-bottom: rem(50);
-	}
+ &-thumbnail {
+  margin-bottom: rem(40);
+ }
 
-	&-header {
-		margin-bottom: rem(50);
-	}
+ &-header {
+  margin-bottom: rem(50);
+ }
 
-	&-content,
-	&-navigation,
-	&-related {
-		margin-bottom: rem(50);
+ &-content,
+ &-navigation,
+ &-related {
+  margin-bottom: rem(50);
 
-		@include min(lg) {
-			margin-bottom: rem(70);
-		}
-	}
+  @include min(lg) {
+   margin-bottom: rem(70);
+  }
+ }
+}
+
+.entry-content {
+ img {
+  margin: rem(40 0);
+  display: block;
+ }
+
+ h2, h3, h4, h5, h6 {
+  margin-bottom: rem(40);
+ }
 }
 
 .nav-links {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: rem(20);
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ gap: rem(20);
 
-	@include min(lg) {
-		flex-direction: row;
-		gap: rem(50);
-	}
+ @include min(lg) {
+  flex-direction: row;
+  gap: rem(50);
+ }
+}
+
+blockquote {
+ position: relative;
+ padding: rem(45 40 30 40);
+ border: 1px solid $light-grey;
+ font-size: rem(20);
+ color: $secondary-charcoal;
+ margin: rem(40 0);
+
+ p {
+  margin-bottom: rem(30);
+ }
+
+ &:before {
+  content: '';
+  display: block;
+  width: rem(40);
+  height: rem(40);
+  margin-bottom: rem(40);
+  background-image: url("../img/quotes.svg");
+ }
+}
+
+.blockquote-author {
+ font-size: rem(16);
+ padding-top: rem(16);
+ border-top: 2px solid $secondary-charcoal;
+ font-weight: 400;
+}
+
+.single-post-excerpt {
+ font-size: rem(18);
+ font-weight: 700;
+
+ @include min(lg) {
+  font-size: rem(20);
+  margin-bottom: rem(40);
+ }
+}
+
+.lwptoc_i {
+ width: 100%;
+ padding: rem(30 10);
+
+ @include min(lg) {
+  padding: rem(40 60);
+ }
+}
+
+.lwptoc_title {
+ font-size: clamp-rem(20, 30);
+ font-weight: 500;
+ margin-bottom: rem(30);
+}
+
+.lwptoc_items {
+ list-style: none;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+ gap: rem(32);
+ padding-left: 0;
+ margin-right: 0;
+
+ .lwptoc_item {
+  font-size: rem(24);
+  background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_93_2689)'%3E%3Cpath d='M17.3506 2.53906L7.16034 11.9926L2.8508 7.39365L0 10.065L6.96228 17.495L20 5.41092L17.3506 2.53906Z' fill='%23FF3600'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_93_2689'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E") no-repeat 0 0.35em / 1em 1em;
+  padding-left: rem(36);
+ }
+}
+
+.post-social-sharing {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: rem(20);
+ border: 1px solid $grey-border;
+ margin-bottom: rem(60);
+
+ h5 {
+  margin-bottom: 0;
+ }
+}
+
+.social-share-buttons {
+ display: flex;
+ align-items: center;
+ gap: rem(30);
+
+ a {
+  svg {
+   width: rem(24);
+   height: rem(24);
+  }
+ }
 }

@@ -1,0 +1,23 @@
+.mirror-image {
+ position: relative;
+
+ &:after {
+  content: '';
+  display: block;
+  padding-bottom: 75%;
+ }
+}
+
+.mirror-info {
+ margin-bottom: rem(30);
+
+ @include min(lg) {
+  margin-bottom: rem(60);
+ }
+}
+
+.mirror-section {
+ .row + .row {
+  margin-top: rem(60);
+ }
+}

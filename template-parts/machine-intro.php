@@ -71,14 +71,31 @@ $gallery        = get_field( 'gallery' )
 				<?php endif; ?>
 
 				<?php if ( $gallery ): ?>
-                    <div class="machine-gallery">
+                        <div class="machine-gallery">
+                            <div class="swiper machine-gallery-slider">
+                                <div class="swiper-wrapper">
 						<?php foreach ( $gallery as $image ): ?>
 
-                            <div class="col-4">
-								<?php echo it_inline_svg( $image['url'] ); ?>
+                            <div class="swiper-slide">
+                                <div class="machine-gallery-image">
+	                                <?php echo it_inline_svg( $image['url'] ); ?>
+                                </div>
                             </div>
 
 						<?php endforeach; ?>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next arrow-right">
+                                <svg>
+                                    <use xlink:href="#slider-arrow-right"></use>
+                                </svg>
+                            </div>
+                            <div class="swiper-button-prev arrow-left">
+                                <svg>
+                                    <use xlink:href="#slider-arrow-left"></use>
+                                </svg>
+                            </div>
+                            <div class="swiper-pagination"></div>
                     </div>
 				<?php endif; ?>
             </div>

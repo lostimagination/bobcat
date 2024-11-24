@@ -1,4 +1,4 @@
-<section class="section section-downloads">
+<section class="section section-downloads section-border-top">
 	<div class="container">
 		<?php
 		$section_title = get_sub_field('section_title');

@@ -78,18 +78,17 @@ dd {
 		position: relative;
 
 		&:before {
-			content: counter(custom-counter);
-			width: 1.5em;
-			height: 1.5em;
+			content: counter(custom-counter) ".";
+			display: inline-block;
+			width: 1.5rem;
+			height: 1.25rem;
 			color: $primary;
-			font-size: 0.75em;
+			font-size: rem(20);
 			font-weight: 700;
-			line-height: 1.33;
-			border: 1px solid $primary;
-			border-radius: 50%;
+			line-height: 1.4;
 			text-align: center;
 			position: absolute;
-			top: 0.25em;
+			top: -2px;
 			left: 0;
 		}
 	}

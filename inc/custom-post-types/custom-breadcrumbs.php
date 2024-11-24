@@ -4,36 +4,28 @@
  */
 function custom_baumaschinen_breadcrumbs($links) {
 	global $post;
+	$archive_page_id = get_field('mech_archive', 'option');
 
-	// Only modify breadcrumbs for Baumaschinen post type
 	if (is_singular('baumaschinen')) {
-		// Get the current post's terms
 		$terms = get_the_terms($post->ID, 'baumaschinen-type');
 
 		if (!empty($terms) && !is_wp_error($terms)) {
-			// Get the first term (primary category)
 			$term = $terms[0];
-
-			// Build array of all parent terms
 			$parent_terms = array();
 			while ($term->parent != 0) {
 				$term = get_term($term->parent, 'baumaschinen-type');
 				array_unshift($parent_terms, $term);
 			}
 
-			// Create new breadcrumb array
 			$new_breadcrumbs = array();
+			$new_breadcrumbs[] = $links[0]; // Home link
 
-			// Add home link (keep the first element from original breadcrumbs)
-			$new_breadcrumbs[] = $links[0];
-
-			// Add "Baumaschinen" base
+			// Add archive page instead of "Baumaschinen" base
 			$new_breadcrumbs[] = array(
-				'url' => home_url('/baumaschinen/'),
-				'text' => __('Baumaschinen', 'bobcat'),
+				'url' => get_permalink($archive_page_id),
+				'text' => get_the_title($archive_page_id),
 			);
 
-			// Add parent terms
 			foreach ($parent_terms as $parent_term) {
 				$new_breadcrumbs[] = array(
 					'url' => get_term_link($parent_term, 'baumaschinen-type'),
@@ -41,14 +33,12 @@ function custom_baumaschinen_breadcrumbs($links) {
 				);
 			}
 
-			// Add current term
 			$current_term = $terms[0];
 			$new_breadcrumbs[] = array(
 				'url' => get_term_link($current_term, 'baumaschinen-type'),
 				'text' => $current_term->name,
 			);
 
-			// Add current post
 			$new_breadcrumbs[] = array(
 				'url' => get_permalink($post),
 				'text' => get_the_title($post),
@@ -59,11 +49,8 @@ function custom_baumaschinen_breadcrumbs($links) {
 		}
 	}
 
-	// For taxonomy archives
 	if (is_tax('baumaschinen-type')) {
 		$term = get_queried_object();
-
-		// Build array of all parent terms
 		$parent_terms = array();
 		$current_term = $term;
 
@@ -72,19 +59,15 @@ function custom_baumaschinen_breadcrumbs($links) {
 			array_unshift($parent_terms, $current_term);
 		}
 
-		// Create new breadcrumb array
 		$new_breadcrumbs = array();
-
-		// Add home link
 		$new_breadcrumbs[] = $links[0];
 
-		// Add "Baumaschinen" base
+		// Add archive page instead of "Baumaschinen" base
 		$new_breadcrumbs[] = array(
-			'url' => home_url('/baumaschinen/'),
-			'text' => __('Baumaschinen', 'bobcat'),
+			'url' => get_permalink($archive_page_id),
+			'text' => get_the_title($archive_page_id),
 		);
 
-		// Add parent terms
 		foreach ($parent_terms as $parent_term) {
 			$new_breadcrumbs[] = array(
 				'url' => get_term_link($parent_term, 'baumaschinen-type'),
@@ -92,7 +75,6 @@ function custom_baumaschinen_breadcrumbs($links) {
 			);
 		}
 
-		// Add current term
 		$new_breadcrumbs[] = array(
 			'text' => $term->name,
 		);

@@ -1,0 +1,76 @@
+.mech-category-section {
+ + .mech-category-section {
+  position: relative;
+  .container {
+   position: relative;
+  }
+
+  .section-top-separator {
+   border: 1px solid $secondary-tan;
+   position: absolute;
+   top: -60px;
+   left: 50px;
+   right: 50px;
+  }
+ }
+}
+
+.mech-category-card {
+ position: relative;
+ border: 1px solid $light-grey;
+ border-radius: 0 0 2px 2px;
+
+ &__image {
+  position: relative;
+
+  &:after {
+   content: '';
+   padding-bottom: 75%;
+   display: block;
+  }
+ }
+
+ &__icon {
+  width: rem(40);
+  height: rem(40);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $primary;
+  transition: transform .3s ease-in;
+
+  svg {
+   width: rem(30);
+   height: rem(16);
+  }
+ }
+
+ &__title {
+  background-color: rgba($secondary-grey, 0.2);
+  font-size: rem(24);
+  line-height: 1;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(16 12);
+  gap: rem(10);
+
+  @include min(lg) {
+   padding: rem(25 10 25 20);
+   font-size: rem(30);
+  }
+ }
+
+ &:hover {
+  .mech-category-card__icon {
+   transform: translate(5px);
+  }
+ }
+}
+
+.mech-categories-button {
+ @include min(lg) {
+  margin-top: rem(50);
+ }
+}

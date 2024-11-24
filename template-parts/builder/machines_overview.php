@@ -19,7 +19,7 @@
 			<?php foreach ( $machines_list as $post ): ?>
 				<?php setup_postdata( $post ); ?>
                 <div class="machine-wide-card">
-                    <a href="<?php the_permalink(); ?>"></a>
+                    <a class="flex-link" href="<?php the_permalink(); ?>"></a>
                     <div class="row">
                         <div class="col-md-4">
 	                        <?php if ( has_post_thumbnail() ) : ?>

@@ -14,9 +14,6 @@ get_header();
 the_post();
 $post_object = get_queried_object();
 ?>
-<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
-
-<?php get_template_part('template-parts/machine-intro'); ?>
 
 <?php if ( have_rows( 'builder', $post_object ) ) : ?>
 

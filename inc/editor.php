@@ -110,6 +110,11 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'selector' => 'p,h1,h2,h3,h4,h5,h6',
 						'classes'  => 'text-uppercase',
 					),
+					array(
+						'title'    => 'Blockquote author',
+						'selector' => 'p',
+						'classes'  => 'blockquote-author',
+					),
 				),
 			),
 			array(

@@ -18,7 +18,11 @@
 
 	.entry-content {
 		padding-bottom: 0;
-		margin-bottom: rem(70);
+		margin-bottom: rem(80);
+
+		@include min(lg) {
+			margin-bottom: rem(140);
+		}
 	}
 
 	.row {

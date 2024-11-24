@@ -179,3 +179,18 @@ iframe[src*="vimeo"] {
 		padding: rem(70 0);
 	}
 }
+
+.section--double-padding {
+	@include min(lg) {
+		padding: rem(140 0);
+	}
+}
+
+.flex-link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}

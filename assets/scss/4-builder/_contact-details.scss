@@ -1,0 +1,46 @@
+.section-contacts {
+ @include min(lg) {
+  padding: rem(50 0 70);
+ }
+}
+
+.contacts-info {
+ margin-bottom: rem(10);
+}
+
+.contact-details-item {
+ display: flex;
+ gap: rem(10);
+ margin-bottom: rem(16);
+ align-items: flex-start;
+
+ &__icon {
+  width: rem(20);
+  height: rem(20);
+  margin-top: rem(6);
+  svg {
+   width: rem(20);
+   height: rem(20);
+  }
+ }
+
+ &__info {
+  line-height: 1.6;
+  font-size: rem(20);
+
+  a {
+   color: $color-text;
+  }
+ }
+}
+
+.contact-map {
+ margin-top: rem(25);
+ border: 1px solid $secondary-tan;
+
+ .leaflet-map {
+  @include min(lg) {
+   height: rem(420);
+  }
+ }
+}

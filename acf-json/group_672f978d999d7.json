@@ -1,13 +1,13 @@
 {
-    "key": "group_672a45737e031",
-    "title": "Module : Mech rent",
+    "key": "group_672f978d999d7",
+    "title": "Module : Mech categories",
     "fields": [
         {
-            "key": "field_6740c13687167",
-            "label": "Image Position",
-            "name": "image_position",
+            "key": "field_672f978dd20a5",
+            "label": "Title",
+            "name": "title",
             "aria-label": "",
-            "type": "true_false",
+            "type": "wysiwyg",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -16,43 +16,15 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
-            "default_value": 0,
+            "default_value": "",
             "allow_in_bindings": 0,
-            "ui_on_text": "Image Last",
-            "ui_off_text": "Image first",
-            "ui": 1
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
-            "key": "field_672a4573b8704",
-            "label": "Image",
-            "name": "image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Recommended image size : 375x562",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "uploader": "",
-            "return_format": "array",
-            "library": "all",
-            "acfe_thumbnail": 0,
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "allow_in_bindings": 0,
-            "preview_size": "medium"
-        },
-        {
-            "key": "field_672a45bdb8705",
+            "key": "field_672f97ddd20a6",
             "label": "Info",
             "name": "info",
             "aria-label": "",
@@ -73,7 +45,36 @@
             "delay": 0
         },
         {
-            "key": "field_6740c15c87168",
+            "key": "field_672f97e5d20a7",
+            "label": "Mech categories",
+            "name": "mech_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "baumaschinen-type",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "checkbox",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "allow_in_bindings": 0,
+            "bidirectional": 0,
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_672f985849db7",
             "label": "Link",
             "name": "link",
             "aria-label": "",
@@ -115,5 +116,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1732297062
+    "modified": 1731174457
 }

@@ -280,3 +280,32 @@ if ( ! function_exists( 'it_log' ) ) {
 	}
 
 }
+
+if ( ! function_exists( 'it_get_social_share_buttons' ) ) {
+	function it_get_social_share_buttons() {
+		$post_url = urlencode(get_permalink());
+		$post_title = urlencode(get_the_title());
+
+		$facebook_url = 'https://www.facebook.com/sharer.php?u=' . $post_url;
+		$twitter_url = 'https://twitter.com/intent/tweet?url=' . $post_url . '&text=' . $post_title;
+		$linkedin_url = 'https://www.linkedin.com/shareArticle?mini=true&url=' . $post_url . '&title=' . $post_title;
+		$xing_url = 'https://www.xing.com/spi/shares/new?url=' . $post_url;
+
+		$output = '<div class="social-share-buttons">';
+		$output .= '<a href="' . $facebook_url . '" target="_blank" rel="nofollow" class="facebook-share">
+        <svg><use xlink:href="#social-facebook"></use></svg>
+    </a>';
+		$output .= '<a href="' . $linkedin_url . '" target="_blank" rel="nofollow" class="linkedin-share">
+        <svg><use xlink:href="#social-linkedin"></use></svg>
+    </a>';
+		$output .= '<a href="' . $twitter_url . '" target="_blank" rel="nofollow" class="twitter-share">
+        <svg><use xlink:href="#social-twitter"></use></svg>
+    </a>';
+		$output .= '<a href="' . $xing_url . '" target="_blank" rel="nofollow" class="xing-share">
+        <svg><use xlink:href="#social-xing"></use></svg>
+    </a>';
+		$output .= '</div>';
+
+		return $output;
+	}
+}

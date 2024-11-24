@@ -67,7 +67,7 @@ function it_custom_init(): void {
 		'publicly_queryable'  => true,
 		'show_ui'             => true,
 		'rest_base'           => '',
-		'has_archive'         => true, // Changed to true to support category archives
+		'has_archive'         => false, // Changed to true to support category archives
 		'menu_icon'           => 'dashicons-format-quote',
 		'show_in_menu'        => true,
 		'show_in_nav_menus'   => true,
@@ -86,23 +86,91 @@ function it_custom_init(): void {
 
 	register_post_type('baumaschinen', $args);
 
-	// Taxonomy registration with corrected rewrite rules
 	register_taxonomy(
-		'example-category',
-		array( 'example' ), /* name of CPT */
+		'baumaschinen-type',
+		array('baumaschinen'),
 		array(
 			'labels'            => array(
-				'name'          => esc_html__( 'Example Categories', 'bobcat' ),
-				'singular_name' => esc_html__( 'Example Category', 'bobcat' ),
-				'add_new_item'  => esc_html__( 'Add New Category', 'bobcat' ),
+				'name'          => esc_html__('Baumaschinen Categories', 'bobcat'),
+				'singular_name' => esc_html__('Baumaschinen Category', 'bobcat'),
+				'add_new_item'  => esc_html__('Add New Category', 'bobcat'),
 			),
-			'hierarchical'      => true,     /* if this is true, it acts like categories */
+			'hierarchical'      => true,
 			'show_admin_column' => true,
 			'show_ui'           => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'example-category' ),
+			'show_in_rest'      => true,
+			'rewrite'           => array(
+				'slug'         => 'baumaschinen',
+				'with_front'   => false,
+				'hierarchical' => true
+			)
 		)
 	);
+
+	$labels = array(
+		'name'          => esc_html__( 'Standorte', 'bobcat' ),
+		'singular_name' => esc_html__( 'Standorte', 'bobcat' ),
+	);
+
+	$args = array(
+		'label'               => esc_html__( 'Standorte', 'bobcat' ),
+		'labels'              => $labels,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => true,
+		'show_ui'             => true,
+		'rest_base'           => '',
+		'has_archive'         => false,
+		'menu_icon'           => 'dashicons-location',
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_rest'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => false,
+		'rewrite'             => array(
+			'slug'       => 'standorte',
+			'with_front' => true,
+		),
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+	);
+
+	register_post_type( 'standorte', $args );
+
+	$labels = array(
+		'name'          => esc_html__( 'Team', 'bobcat' ),
+		'singular_name' => esc_html__( 'Team', 'bobcat' ),
+	);
+
+	$args = array(
+		'label'               => esc_html__( 'Team', 'bobcat' ),
+		'labels'              => $labels,
+		'description'         => '',
+		'public'              => true,
+		'publicly_queryable'  => false,
+		'show_ui'             => true,
+		'rest_base'           => '',
+		'has_archive'         => false,
+		'menu_icon'           => 'dashicons-admin-users',
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_rest'        => true,
+		'exclude_from_search' => false,
+		'capability_type'     => 'post',
+		'map_meta_cap'        => true,
+		'hierarchical'        => false,
+		'rewrite'             => array(
+			'slug'       => 'team',
+			'with_front' => true,
+		),
+		'query_var'           => true,
+		'supports'            => array( 'title', 'editor', 'thumbnail', 'revisions' ),
+	);
+
+	register_post_type( 'team', $args );
 }
 
 add_action( 'init', 'it_custom_init' );
