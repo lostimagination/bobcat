@@ -1,12 +1,29 @@
 .advantages {
 	.c-title {
-		margin-bottom: rem(40);
+		margin-bottom: rem(20);
+		color: $main-black;
+
+		@include min(lg) {
+			margin-bottom: rem(40);
+		}
+	}
+
+	+ .reviews {
+		padding-top: rem(50);
+
+		@include min(md) {
+			padding-top: rem(70);
+		}
 	}
 }
 
 .content-margin {
-	margin-bottom: rem(40);
+	margin-bottom: rem(20);
 	font-size: rem(20);
+
+	@include min(md) {
+		margin-bottom: rem(40);
+	}
 }
 
 .advantage {
@@ -16,9 +33,14 @@
 }
 
 .icon-svg {
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	margin-right: rem(20);
+
+	@include min(md) {
+		width: 60px;
+		height: 60px;
+	}
 }
 
 .advantage-content {

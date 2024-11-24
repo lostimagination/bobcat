@@ -1,0 +1,15 @@
+.separator-text {
+	padding: rem(30 14);
+	background-color: $main-black;
+	text-align: center;
+	text-transform: uppercase;
+	color: $w;
+
+	@include min(md) {
+		padding: rem(60 20);
+	}
+
+	h2 {
+		margin-bottom: 0;
+	}
+}

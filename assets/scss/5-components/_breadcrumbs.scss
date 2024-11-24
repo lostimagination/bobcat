@@ -1,16 +1,20 @@
 .breadcrumbs {
 	color: $grey;
 	font-size: rem(14);
-	font-style: italic;
 	margin-bottom: rem(30);
 
 	a {
-		color: inherit;
+		color: $main-black;
 		margin-right: rem(2);
+		font-size: rem(12);
 
 		&:hover {
 			color: $color-text;
 		}
+	}
+
+	span {
+		font-size: rem(12);
 	}
 
 	span {

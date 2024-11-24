@@ -51,7 +51,11 @@ figure {
 p {
 	margin-top: 0;
 	margin-bottom: rem(20);
-	font-size: rem(20);
+	font-size: rem(18);
+
+	@include min(md) {
+		font-size: rem(20);
+	}
 }
 
 // Links
@@ -173,7 +177,7 @@ iframe[src*="vimeo"] {
 }
 
 .section {
-	padding: rem(50 0);
+	padding: rem(40 0);
 
 	@include min(lg) {
 		padding: rem(70 0);

@@ -2,17 +2,29 @@
 	.row + .row {
 		margin-top: 0;
 	}
+	.row{
+		row-gap: 16px;
+		@include min(md) {
+			row-gap: 30px;
+		}
+	}
 }
 
 .counter-paragraph {
-	margin-bottom: rem(40);
+	margin-bottom: rem(30);
+	@include min(md) {
+		margin-bottom: rem(40);
+	}
 }
 
 .counter-card {
 	border: 1px solid $main-black;
 	border-radius: 2px;
-	padding: rem(50 20 40);
+	padding: rem(50 20 20);
 	height: 100%;
+	@include min(md) {
+		padding: rem(50 20 40);
+	}
 
 	&__label {
 		text-transform: uppercase;
@@ -29,22 +41,55 @@
 .number-wrapper {
 	display: flex;
 	align-items: center;
-	font-size: 94px;
+	font-size: 80px;
 	font-family: $font-heading;
 	font-weight: 500;
 	color: $main-black;
 	border-bottom: 4px solid $secondary-charcoal;
 	margin-bottom: rem(20);
+	line-height: 1.3;
+	padding-bottom: 40px;
+
+	@include min(md) {
+		font-size: 60px;
+		padding-bottom: 120px;
+	}
+	@include min(xl) {
+		font-size: 94px;
+		padding-bottom: 138px;
+	}
 
 	p {
 		margin-bottom: 0;
 		margin-right: 5px;
-		font-size: 94px;
+		font-size: 80px;
+
+		@include min(md) {
+			font-size: 60px;
+		}
+		@include min(xl) {
+			font-size: 94px;
+		}
 	}
 }
 
 .button-center {
-	display: flex;
-	justify-content: center;
-	margin-top: rem(40);
+	display: block;
+		margin-top: rem(30);
+
+	@include min(md) {
+		display: flex;
+		justify-content: center;
+	}
+	.btn{
+		display: flex;
+
+		@include min(md) {
+		display: inline-flex;
+		}
+	}
+
+	@include min(md) {
+		margin-top: rem(40);
+	}
 }

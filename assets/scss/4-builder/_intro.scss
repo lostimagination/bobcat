@@ -1,43 +1,80 @@
-.intro{
+.intro {
 	background-color: $primary;
-	margin-bottom: rem(70);
-	.c-title{
-		margin-bottom: rem(30);
-	}
-}
-.info-wrapper{
-	padding: rem(90 0 120);
+	margin-bottom: rem(50);
+	overflow: hidden;
 	@include min(lg) {
-		padding: rem(145 0 224)
+		margin-bottom: rem(70);
+	}
+
+	.c-title {
+		margin-bottom: rem(20);
+		@include min(lg) {
+			margin-bottom: rem(30);
+		}
+	}
+	.btn-secondary{
+		@include max(md) {
+			display: flex;
+		}
 	}
 }
-.title-white{
+
+.info-wrapper {
+	padding: rem(40 0 10);
+
+	@include min(lg) {
+		padding: rem(90 0 120);
+	}
+
+	@include min(xl) {
+		padding: rem(185 0 224)
+	}
+}
+
+.title-white {
 	color: $w;
 	text-transform: uppercase;
 }
-.intro-paragraph{
+
+.intro-paragraph {
 	color: $w;
 	font-size: rem(24);
 	margin-bottom: rem(40);
-	padding: rem(0 );
+	padding: rem(0);
 	@include min(lg) {
 		padding: rem(0 140 0 0);
 	}
 }
 
 .intro-image-wrapper {
-	position: relative;
-	height: 100%;
+	position: static;
+	height: 309px;
+	margin-right: -15px;
+	margin-left: -15px;
+	@include min(md) {
+		margin-right: -30px;
+		height: 100%;
+	}
+	@include min(lg) {
+		position: relative;
+		margin-right: 0;
+
+	}
 }
 
-.intro-image{
-	position: absolute;
-	width: 70vw;
+.intro-image {
+	position: static;
 	object-fit: cover;
 	top: 0;
 	left: 0;
 	display: block;
-	max-width: none;
+	max-width: 100%;
 	max-height: 100%;
 	height: 100%;
+	@include min(lg) {
+		position: absolute;
+		width: 70vw;
+		max-width: none;
+
+	}
 }

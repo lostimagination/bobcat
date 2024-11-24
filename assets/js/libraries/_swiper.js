@@ -26,12 +26,21 @@ export const it_swiper = () => {
 		const sliderWrapper = slider.closest('.review-slider-wrapper');
 		new Swiper(slider, {
 			loop: true,
-			slidesPerView: 3,
-			spaceBetween: 30,
+			slidesPerView: 1.3,
+			spaceBetween: 10,
 			autoplay: false,
 			pagination: {
 				el: sliderWrapper.querySelector('.swiper-pagination'),
 				clickable: true,
+			},
+			breakpoints: {
+				640: {
+					slidesPerView: 2,
+					spaceBetween: 30,
+				},
+				1024: {
+					slidesPerView: 3,
+				}
 			},
 			navigation: {
 				enabled: true,
@@ -43,7 +52,8 @@ export const it_swiper = () => {
 				slideChange() {
 					try {
 						lazyLoadInstance.update();
-					} catch (e) {}
+					} catch (e) {
+					}
 				},
 			},
 		});
@@ -53,7 +63,7 @@ export const it_swiper = () => {
 		sliders.forEach((slider) => {
 			const sliderWrapper = slider.closest('.jobs-slider-wrapper');
 			new Swiper(slider, {
-				slidesPerView: 1,
+				slidesPerView: 1.3,
 				spaceBetween: 20,
 				autoplay: false,
 				centeredSlides: true,
@@ -61,6 +71,17 @@ export const it_swiper = () => {
 				pagination: {
 					el: sliderWrapper.querySelector('.swiper-pagination'),
 					clickable: true,
+				},
+				breakpoints: {
+					640: {
+						slidesPerView: 1,
+						spaceBetween: 20,
+
+					},
+					1024: {
+						slidesPerView: 1,
+						spaceBetween: 30,
+					},
 				},
 				navigation: {
 					enabled: true,
@@ -72,9 +93,11 @@ export const it_swiper = () => {
 					slideChange() {
 						try {
 							lazyLoadInstance.update();
-						} catch (e) {}
+						} catch (e) {
+						}
 					},
 				},
+
 			});
 		});
 	});

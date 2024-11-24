@@ -16,7 +16,7 @@ $content = get_sub_field( 'content' );
 		<div class="row">
 			<?php if ( have_rows( 'all_advantages' ) ) : ?>
 				<?php while ( have_rows( 'all_advantages' ) ) : the_row(); ?>
-					<div class="col-lg-4">
+					<div class="col-md-6 col-lg-4">
 						<div class="advantage">
 							<?php
 							$icon      = get_sub_field( 'icon' );
