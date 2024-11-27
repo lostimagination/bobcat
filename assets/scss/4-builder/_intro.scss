@@ -1,37 +1,27 @@
 .intro {
-	background-color: $primary;
-	margin-bottom: rem(50);
-	overflow: hidden;
-	@include min(lg) {
-		margin-bottom: rem(70);
-	}
+ margin-bottom: rem(70);
 
-	.c-title {
-		margin-bottom: rem(20);
-		@include min(lg) {
-			margin-bottom: rem(30);
-		}
-	}
-	.btn-secondary{
-		@include max(md) {
-			display: flex;
-		}
-	}
+ .c-title {
+  margin-bottom: rem(30);
+ }
 }
 
 .info-wrapper {
 	padding: rem(40 0 10);
 
 	@include min(lg) {
-		padding: rem(90 0 120);
+		padding: rem(90 40 120 0);
 	}
 
 	@include min(xl) {
-		padding: rem(185 0 224)
+		padding: rem(185 60 224 0)
 	}
-}
 
-.title-white {
+.bg-dark {
+ background-color: $b;
+}
+}
+.title-white{
 	color: $w;
 	text-transform: uppercase;
 }
@@ -43,6 +33,10 @@
 	padding: rem(0);
 	@include min(lg) {
 		padding: rem(0 140 0 0);
+	}
+
+	p {
+		font-size: rem(24);
 	}
 }
 

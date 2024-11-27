@@ -30,12 +30,14 @@ import { it_smooth_anchor_scroll } from './components/_smooth-scroll-anchor';
 import { it_toggle_to_top, it_click_to_top } from './components/_to-top';
 import { it_toggle_item } from './components/_toggle';
 import { it_force_lazy_load } from './components/_force-lazy-load';
+import { it_counter } from './components/_counter';
+import { itInitLocationsDropdown } from './components/_dropdown-locations';
 
 /*
  * Import custom functions for vendor libraries.
  */
 import { it_nice_select } from './libraries/_nice-select';
-import { it_swiper } from './libraries/_swiper';
+import { initializeSliders } from './libraries/_swiper';
 import { it_fancybox } from './libraries/_fancybox';
 
 $(document).ready(function () {
@@ -51,8 +53,10 @@ $(document).ready(function () {
 	it_cf7_example_event();
 	it_fix_full_height();
 	it_nice_select();
-	it_swiper();
+	initializeSliders();
 	it_fancybox();
+	it_counter();
+	itInitLocationsDropdown();
 
 	/*
 	 * JS LazyLoad fix for images on the first screen.

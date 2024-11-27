@@ -13,7 +13,7 @@ declare( strict_types=1 );
 <?php
 $paragraph = get_sub_field( 'paragraph' );
 ?>
-<section class="m-faq c-block">
+<section class="m-faq">
 	<div class="container">
 		<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => '' ) ) ?>
 

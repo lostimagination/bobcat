@@ -1,0 +1,43 @@
+.section-downloads {
+ padding: rem(60 0);
+
+ &__title {
+  margin-bottom: rem(40);
+ }
+}
+
+.downloads-list {
+ border-top: 1px solid $b;
+
+ &__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(30) 0;
+  border-bottom: 1px solid $b;
+ }
+
+ &__content {
+  padding-right: rem(30);
+ }
+
+ &__title {
+  margin-bottom: rem(5);
+  font-size: rem(24);
+  font-weight: 400;
+  line-height: 1.4;
+ }
+
+ &__info {
+  color: rgba($b, 0.5);
+  font-size: rem(16);
+ }
+
+ &__link {
+  flex-shrink: 0;
+  svg {
+   width: rem(40);
+   height: rem(40);
+  }
+ }
+}

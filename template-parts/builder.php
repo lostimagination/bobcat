@@ -10,12 +10,22 @@
 declare( strict_types = 1 );
 
 $index = 1;
+$term = $args['term'] ?? null;
+$post_object = $args['post_object'] ?? null;
+$post_item = $term ?: $post_object;
 
-// Loop over the ACF flexible fields of this page / post.
-while ( have_rows( 'builder' ) ) : the_row();
 
-	// load the layout from sub folder.
-	get_template_part( 'template-parts/builder/' . get_row_layout(), null, [ 'index' => $index ] );
+while ( have_rows( 'builder' , $post_item ) ) : the_row();
+
+	get_template_part(
+		'template-parts/builder/' . get_row_layout(),
+		null,
+		[
+			'index' => $index,
+			'term' => $term,
+			'post_object' => $post_object
+		]
+	);
 	$index++;
 
 endwhile;

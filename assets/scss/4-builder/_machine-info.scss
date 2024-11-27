@@ -1,0 +1,47 @@
+.machine-info {
+ padding: rem(60 0);
+}
+
+.anchor-list {
+ display: flex;
+ flex-wrap: wrap;
+ align-items: center;
+ gap: rem(10);
+
+ &__label {
+  padding-right: rem(10);
+
+  @include max(lg) {
+   width: 100%;
+  }
+ }
+
+ &__item {
+  padding: rem(10 13);
+  border: 1px solid $primary;
+  border-radius: rem(6);
+  margin-bottom: 0;
+  color: $b;
+  font-size: rem(18);
+
+  @include min(lg) {
+   font-size: rem(20);
+  }
+
+  &.active {
+   background-color: $light-grey;
+   border-color: $secondary-tan;
+   border-bottom: 1px solid $secondary-tan;
+  }
+ }
+
+ &--single {
+  padding-bottom: rem(20);
+  border-bottom: 1px solid $secondary-tan;
+
+  .anchor-list__item:first-of-type {
+   background-color: $light-grey;
+   border-color: $secondary-tan;
+  }
+ }
+}

@@ -1,0 +1,87 @@
+.machine-wide-card {
+ position: relative;
+ border: 1px solid $light-grey;
+ border-radius: 2px;
+ padding: rem(10);
+ margin-bottom: rem(16);
+
+ @include min(lg) {
+  padding: rem(20 50);
+ }
+
+ &__image {
+  position: relative;
+  @include min(lg) {
+   margin-right: rem(50);
+  }
+
+  &:after {
+   display: block;
+   content: '';
+   padding-bottom: 100%;
+  }
+ }
+
+ &__info {
+  border-top: 2px solid $secondary-charcoal;
+  padding: rem(20 10);
+  min-height: 100%;
+
+  @include min(lg) {
+   padding: rem(20 30);
+   border-left: 2px solid $secondary-charcoal;
+  }
+ }
+
+ &__link {
+  position: relative;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  background-color: rgba($secondary-grey , 0.2);
+  pointer-events: none;
+  padding: rem(15 10);
+
+  @include min(lg) {
+   display: block;
+   position: absolute;
+   width: rem(78);
+   padding: 0;
+  }
+ }
+
+ &__icon{
+  position: static;
+  width: rem(40);
+  height: rem(40);
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: $primary;
+  pointer-events: none;
+
+  @include min(lg) {
+   position: absolute;
+   transform: translate(-50% , -50%);
+  }
+
+  svg {
+   width: rem(29);
+   height: rem(16);
+  }
+ }
+}
+
+.tax-baumaschinen-type {
+ .default-content {
+  @include min(lg) {
+   padding: rem(140 0);
+  }
+ }
+}

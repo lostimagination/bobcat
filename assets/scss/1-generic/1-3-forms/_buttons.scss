@@ -162,5 +162,19 @@ input[type="submit"] {
 	gap: rem(15);
 }
 
+.btn-full {
+	width: 100%;
+	text-align: center;
+}
 
+.max-lg-flex {
+	@include max(lg) {
+		display: flex;
+	}
+}
 
+.max-lg-full {
+	@include max(lg) {
+		width: 100%;
+	}
+}

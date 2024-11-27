@@ -5,6 +5,10 @@
 	text-transform: uppercase;
 	color: $w;
 
+	.bg-red & {
+		background-color: $primary;
+	}
+
 	@include min(md) {
 		padding: rem(60 20);
 	}

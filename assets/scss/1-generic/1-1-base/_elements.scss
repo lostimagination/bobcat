@@ -23,15 +23,23 @@ body {
 	-webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
 	-moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
 	overflow-x: hidden;
-	padding-top: var(--header-height);
+	padding-top: rem(77);
 	transition: padding-top $time;
+
+	@include min(lg) {
+		padding-top: var(--header-height);
+	}
 
 	&.is-menu-open {
 		overflow: hidden;
 	}
 
 	&.is-scrolled {
-		padding-top: var(--header-scrolled-height);
+		padding-top: rem(77);
+
+		@include min(lg) {
+			padding-top: var(--header-scrolled-height);
+		}
 	}
 
 	&.has-hero {
@@ -182,4 +190,43 @@ iframe[src*="vimeo"] {
 	@include min(lg) {
 		padding: rem(70 0);
 	}
+}
+
+.section--double-padding {
+	@include min(lg) {
+		padding: rem(140 0);
+	}
+}
+
+.flex-link {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.text-white {
+	color: $w;
+}
+
+.pb-0 {
+	padding-bottom: 0;
+}
+
+.archive-wrapper.pt-0 {
+	padding-top: 0;
+}
+
+.mb-1 {
+	margin-bottom: rem(20);
+}
+
+.bg-dark {
+	background-color: $b;
+}
+
+.bg-red {
+	background-color: $primary;
 }

@@ -1,77 +1,110 @@
 .jobs {
-	overflow: hidden;
+ overflow: hidden;
+
+ @include min(lg) {
+  padding-bottom: rem(140);
+ }
 }
 
 .job {
-	background-color: $main-black;
+ background-color: $main-black;
 
-	.c-title {
-		color: $w;
-		margin-bottom: rem(30);
-		@include min(lg) {
-			margin-bottom: rem(20);
-		}
-	}
+ .c-title {
+  color: $w;
+  margin-bottom: rem(30);
+  @include min(lg) {
+   margin-bottom: rem(20);
+  }
+ }
 }
 
 .job-info {
-	display: block;
-	height: 100%;
-	padding: rem(40 10);
+ display: block;
+ height: 100%;
+ padding: rem(40 10);
 
-	@include min(md) {
-		padding: rem(60 10 40 40);
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-	}
+ @include min(md) {
+  padding: rem(60 10 40 40);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+ }
 
-	.btn-small {
-		@include max(md) {
-			display: flex;
-		}
-	}
+ .btn-small {
+  @include max(md) {
+   display: flex;
+  }
+ }
 }
 
 .job-paragraph {
-	color: $w;
-	flex-grow: 1;
+ color: $w;
+ flex-grow: 1;
 }
 
 .job-image {
-	position: relative;
-	height: 100%;
-	object-fit: cover;
+ position: relative;
+ height: 100%;
+ object-fit: cover;
+ flex-shrink: 0;
 
-	&:after {
-		padding-bottom: 66.67%;
-		content: '';
-		display: block;
-		@include min(md) {
-			padding-bottom: 98.67%;
-		}
-		@include min(lg) {
-			padding-bottom: 66.67%;
-		}
-	}
+ &:after {
+  padding-bottom: 174px;
+  content: '';
+  display: block;
+  @include min(md) {
+   padding-bottom: 250px;
+  }
+  @include min(lg) {
+   padding-bottom: 66.67%;
+  }
+ }
 }
 
 .jobs-slider-wrapper .slider-jobs {
-	overflow: visible;
+ overflow: visible;
 
-	.swiper-slide {
-		opacity: 0.3;
-		transition: opacity .2s ease-in;
-	}
+ .swiper-slide {
+  opacity: 0.3;
+  transition: opacity .2s ease-in;
+  height: auto;
+ }
 
-	.swiper-slide-active {
-		opacity: 1;
-	}
+ .job, .row {
+  height: 100%;
+ }
 
-	.swiper-pagination-bullet-active,
-	.swiper-pagination-bullet {
-		&:after {
-			background-color: $main-black;
-		}
-	}
+ @include max(lg) {
+  .job .row {
+   flex-direction: column;
+  }
+
+  .job-info-col {
+   @include max(lg) {
+    flex-grow: 1;
+   }
+  }
+
+  .job-info {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+   padding-bottom: 10px;
+  }
+
+  .job-paragraph {
+   flex-grow: 1;
+  }
+ }
+
+ .swiper-slide-active {
+  opacity: 1;
+ }
+
+ .swiper-pagination-bullet-active,
+ .swiper-pagination-bullet {
+  &:after {
+   background-color: $main-black;
+  }
+ }
 }

@@ -14,7 +14,7 @@
 							<div class="swiper-slide">
 								<div class="job">
 									<div class="row">
-										<div class=" col-md-5 col-lg-4">
+										<div class=" col-md-5 col-lg-4 job-info-col">
 											<div class="job-info">
 												<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => '' ) ) ?>
 

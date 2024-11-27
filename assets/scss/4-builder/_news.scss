@@ -45,3 +45,13 @@ flex-grow: 1;
 	font-family: $font-heading;
 	font-weight: 700;
 }
+
+.slider-news {
+	.swiper-slide {
+		height: auto;
+	}
+}
+
+.mobile-news-slider {
+	padding-right: 0;
+}

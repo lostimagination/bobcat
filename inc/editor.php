@@ -110,6 +110,11 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'selector' => 'p,h1,h2,h3,h4,h5,h6',
 						'classes'  => 'text-uppercase',
 					),
+					array(
+						'title'    => 'Blockquote author',
+						'selector' => 'p',
+						'classes'  => 'blockquote-author',
+					),
 				),
 			),
 			array(
@@ -125,6 +130,12 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'title'    => 'Button (outline)',
 						'selector' => 'a',
 						'classes'  => 'btn btn-outline',
+						'wrapper'  => false,
+					),
+					array(
+						'title'    => 'Button (small)',
+						'selector' => 'a',
+						'classes'  => 'btn btn-small',
 						'wrapper'  => false,
 					),
 					array(
@@ -153,6 +164,12 @@ if ( ! function_exists( 'it_tiny_mce_before_init_formats' ) ) {
 						'title'    => 'List (numbered)',
 						'classes'  => 'list-number',
 						'selector' => 'ol',
+						'wrapper'  => false,
+					),
+					array(
+						'title'    => 'List (border left)',
+						'classes'  => 'list-border',
+						'selector' => 'ul',
 						'wrapper'  => false,
 					),
 				),

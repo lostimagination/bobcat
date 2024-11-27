@@ -19,7 +19,7 @@ get_header();
 the_post();
 ?>
 
-<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+<div class="breadcrumbs-section container"><?php get_template_part( 'template-parts/breadcrumbs' ); ?></div>
 
 <?php if ( have_rows( 'builder' ) ) : ?>
 

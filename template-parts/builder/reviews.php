@@ -12,7 +12,7 @@ $background_image = get_sub_field( 'background_image' );
 		<?php endif; ?>
 		<div class="container">
 			<?php if ( $title_section ) : ?>
-				<div>
+				<div class="text-white">
 					<?php echo wp_kses_post( $title_section ) ?>
 				</div>
 			<?php endif; ?>

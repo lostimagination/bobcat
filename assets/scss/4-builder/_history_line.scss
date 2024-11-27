@@ -1,7 +1,16 @@
 .history_line{
+overflow: hidden;
 	.c-title{
 		margin-bottom: rem(30);
 		color: $main-black;
+	}
+
+	.swiper-slide {
+		opacity: 0.2;
+	}
+
+	.swiper-slide-prev , .swiper-slide-next , .swiper-slide-active {
+		opacity: 1;
 	}
 }
 .card-history{
@@ -11,13 +20,13 @@
 	display: flex;
 flex-direction: column;
 	position: relative;
-	font-size: rem(140);
+	font-size: rem(80);
 	font-family: $font-heading;
 	font-weight: 500;
 	color: $main-black;
 	line-height: 1.1;
 	border-bottom: 4px solid $main-red;
-	padding: rem(45 20 50 20);
+	padding: rem(45 0 40 0);
 	margin-bottom: 0;
  &:after{
 	 content: '';
@@ -30,13 +39,19 @@ flex-direction: column;
 	 border: 1px solid $main-red;
 	 border-radius: 50%;
 	 background-color: $main-red;
+
+		@include min(lg) {
+			font-size: rem(140);
+			padding: rem(45 20 50 20);
+		}
  }
 }
 .our-history{
-	width: calc(100% / 5);
-
 }
 .history-info{
 	padding: rem(30 20 );
 }
 
+.slider-history {
+	overflow: visible;
+}

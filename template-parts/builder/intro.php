@@ -2,12 +2,13 @@
 $paragraph   = get_sub_field( 'paragraph' );
 $intro_link  = get_sub_field( 'intro_link' );
 $intro_image = get_sub_field( 'intro_image' );
+$bg_type     = get_sub_field( 'background_type' ) ? 'bg-dark' : 'bg-red';
 ?>
-<section class="intro">
-	<div class="container container-large">
-		<div class="row">
-			<div class="col-md-6 col-lg-5">
-				<div class="info-wrapper">
+<section class="intro <?php echo esc_attr( $bg_type ); ?>">
+    <div class="container container-large">
+        <div class="row">
+            <div class="col-md-6 col-lg-5">
+                <div class="info-wrapper">
 					<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => 'title-white' ) ) ?>
 
 					<?php if ( $paragraph ) : ?>
@@ -18,7 +19,7 @@ $intro_image = get_sub_field( 'intro_image' );
 
 					<?php if ( $intro_link ) :
 						$intro_link_target = $intro_link['target'] ? $intro_link['target'] : '_self'; ?>
-						<a class="btn btn-secondary" target="<?php echo esc_attr( $intro_link_target ); ?>"
+						<a class="btn btn-secondary max-lg-flex" target="<?php echo esc_attr( $intro_link_target ); ?>"
 						   href="<?php echo esc_url( $intro_link['url'] ); ?>">
 							<?php echo $intro_link['title'] ?></a>
 					<?php endif; ?>

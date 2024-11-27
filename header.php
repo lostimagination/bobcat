@@ -10,11 +10,21 @@
  */
 
 // Enable strict typing mode.
-declare( strict_types = 1 );
+declare( strict_types=1 );
 
-$logo_id  = get_field( 'logo', 'options' );
-$logo     = is_int( $logo_id ) ? wp_get_attachment_image( $logo_id, 'medium' ) : '';
-$has_hero = false;
+$logo_id      = get_field( 'logo', 'options' );
+$logo         = is_int( $logo_id ) ? wp_get_attachment_image( $logo_id, 'medium' ) : '';
+$has_hero     = false;
+$contact_link = get_field( 'contact_link', 'options' );
+if ($contact_link) {
+	$target = $contact_link['target'] ? $contact_link['target'] : '_self';
+	$contact_button = sprintf(
+		'<li class="menu-item menu-item-contact"><a class="btn btn-small" target="%s" href="%s">%s</a></li>',
+		esc_attr($target),
+		esc_url($contact_link['url']),
+		esc_html($contact_link['title'])
+	);
+}
 
 while ( have_rows( 'builder' ) ) {
 	the_row();
@@ -25,14 +35,50 @@ while ( have_rows( 'builder' ) ) {
 
 $extra_classes = $has_hero ? 'has-hero' : ''; // Page with Hero requires extra header's styling.
 ?>
+<?php
+$locations       = get_field( 'locations_list', 'options' );
+$locations_count = count( $locations );
+ob_start();
+?>
+<div class="locations-dropdown">
+    <a href="#" class="locations-dropdown__toggle">
+        <span class="location-icon">
+           <svg>
+               <use xlink:href="#location-pin"></use>
+           </svg>
+        </span>
+		<?php echo $locations_count; ?> <?php esc_html_e( 'Niederlassungen', 'bobcat' ); ?>
+        <span class="dropdown-arrow">
+           <svg>
+               <use xlink:href="#arrow-down-loc"></use>
+           </svg>
+        </span>
+    </a>
 
+	<?php if ( $locations ) : ?>
+        <div class="locations-dropdown__menu">
+			<?php foreach ( $locations as $location ) :
+				$location_title = get_the_title( $location );
+				$location_url = get_permalink( $location );
+				?>
+                <a href="<?php echo esc_url( $location_url ); ?>" class="locations-dropdown__item">
+                    <span class="location-marker"></span>
+                    <span class="location-name"><?php esc_html_e( 'Niederlassungen', 'bobcat' ); ?> <?php echo esc_html( $location_title ); ?></span>
+                </a>
+			<?php endforeach; ?>
+        </div>
+	<?php endif; ?>
+</div>
+<?php
+$locations_el = ob_get_clean();
+?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php wp_head(); ?>
 </head>
@@ -42,59 +88,51 @@ $extra_classes = $has_hero ? 'has-hero' : ''; // Page with Hero requires extra h
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bobcat' ); ?></a>
 
 <header class="site-header">
-	<div class="container">
-		<?php if ( ! empty( $logo ) ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" rel="home" aria-label="<?php bloginfo( 'name' ); ?>">
-				<?php echo wp_kses_post( $logo ); ?>
-			</a>
-		<?php endif; ?>
+    <div class="container container-large">
+        <div class="header-top visible-md-up">
+			<?php $header_top_text = get_field( 'header_top_text', 'options' ); ?>
+			<?php if ( $header_top_text ) : ?>
+                <div class="header-top__info"><?php echo esc_html( $header_top_text ); ?></div>
+			<?php endif; ?>
+			<?php echo $locations_el; ?>
+        </div>
+        <div class="header-bottom">
+			<?php if ( ! empty( $logo ) ) : ?>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo" rel="home"
+                   aria-label="<?php bloginfo( 'name' ); ?>">
+					<?php echo wp_kses_post( $logo ); ?>
+                </a>
+			<?php endif; ?>
 
-		<nav class="main-nav">
-			<?php
-			wp_nav_menu(
-				array(
+            <nav class="main-nav">
+                <?php echo $locations_el; ?>
+				<?php
+				wp_nav_menu(array(
 					'theme_location'  => 'main',
 					'container_class' => 'main-menu__container',
 					'menu_class'      => 'main-menu',
 					'depth'           => 2,
 					'fallback_cb'     => false,
-				)
-			);
-			?>
-			<?php if ( is_active_sidebar( 'language-switcher' ) ) : ?>
-				<div class="hidden-sm-up">
-					<?php dynamic_sidebar( 'language-switcher' ); ?>
-				</div>
-			<?php endif; ?>
-		</nav>
-
-		<?php
-		if ( class_exists( 'WooCommerce' ) ) :
-			?>
-			<?php $count = WC()->cart->get_cart_contents_count(); ?>
-			<a class="mini-cart <?php echo ( 0 === $count ) ? 'mini-cart--empty' : ''; ?>" href="<?php echo esc_url( wc_get_cart_url() ); ?>" aria-label="<?php echo esc_attr( $count ); ?>">
-				<svg>
-					<use xlink:href="#cart"></use>
-				</svg>
-				<?php if ( 0 !== $count ) : ?>
-					<span class="mini-cart__total" role="presentation"><?php echo esc_html( $count ); ?></span>
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s' . $contact_button . '</ul>'
+				));
+				?>
+				<?php if ( is_active_sidebar( 'language-switcher' ) ) : ?>
+                    <div class="hidden-sm-up">
+						<?php dynamic_sidebar( 'language-switcher' ); ?>
+                    </div>
 				<?php endif; ?>
-			</a>
-			<a class="user-account" aria-label="<?php esc_html_e( 'User Account', 'bobcat' ); ?>" href="<?php echo esc_url( home_url() . '/my-account/' ); ?>">
-				<svg id="user-circle" class="color-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" width="36" height="36">
-					<path d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm128 421.6c-35.9 26.5-80.1 42.4-128 42.4s-92.1-15.9-128-42.4V416c0-35.3 28.7-64 64-64 11.1 0 27.5 11.4 64 11.4 36.6 0 52.8-11.4 64-11.4 35.3 0 64 28.7 64 64v13.6zm30.6-27.5c-6.8-46.4-46.3-82.1-94.6-82.1-20.5 0-30.4 11.4-64 11.4S204.6 320 184 320c-48.3 0-87.8 35.7-94.6 82.1C53.9 363.6 32 312.4 32 256c0-119.1 96.9-216 216-216s216 96.9 216 216c0 56.4-21.9 107.6-57.4 146.1zM248 120c-48.6 0-88 39.4-88 88s39.4 88 88 88 88-39.4 88-88-39.4-88-88-88zm0 144c-30.9 0-56-25.1-56-56s25.1-56 56-56 56 25.1 56 56-25.1 56-56 56z"/>
-				</svg>
-			</a>
-		<?php endif; ?>
+            </nav>
 
-		<?php if ( is_active_sidebar( 'language-switcher' ) ) : ?>
-			<div class="visible-md-up">
-				<?php dynamic_sidebar( 'language-switcher' ); ?>
-			</div>
-		<?php endif; ?>
+			<?php if ( is_active_sidebar( 'language-switcher' ) ) : ?>
+                <div class="visible-md-up">
+					<?php dynamic_sidebar( 'language-switcher' ); ?>
+                </div>
+			<?php endif; ?>
 
-		<span class="icon-burger hidden-lg-up" role="button" aria-label="<?php esc_html_e( 'Toggle navigation', 'bobcat' ); ?>"><i></i></span>
-	</div>
+            <span class="icon-burger hidden-lg-up" role="button"
+                  aria-label="<?php esc_html_e( 'Toggle navigation', 'bobcat' ); ?>"><span><?php esc_html_e('menu' , 'bobcat'); ?></span><i></i></span>
+        </div>
+    </div>
 </header>
 
 <main class="site-content" id="content">

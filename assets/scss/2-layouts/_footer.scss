@@ -75,6 +75,10 @@
 	z-index: 0;
 	overflow: hidden;
 
+	h2 {
+		word-break: keep-all;
+	}
+
 	@include min(md) {
 		width: 50%;
 		padding: rem(0 20 0 30);
@@ -109,98 +113,181 @@
 	}
 }
 
-.form-footer {
-	display: block;
+.site-footer {
+	.form-footer {
+		display: block;
 
-	@include min(md) {
-		display: flex;
-		align-items: flex-start;
-		flex-direction: column;
-	}
-
-	@include min(lg) {
-		flex-direction: row;
-		align-items: center;
-	}
-
-	.wpcf7 {
-		form {
+		@include min(lg) {
 			display: flex;
-			flex-direction: column;
-			border-radius: 2px;
+			align-items: center;
+		}
 
+		.wpforms-form  {
+			display: flex;
+			align-items: flex-start;
+			flex-direction: column;
+			width: 100%;
 			@include min(lg) {
 				flex-direction: row;
+				width: auto;
+				align-items: center;
+			}
+
+			.wpforms-field-container {
+				display: flex;
+				align-items: flex-start;
+				flex-direction: column;
+				width: 100%;
+				gap: 5px;
+
+				@include min(lg) {
+					width: auto;
+					gap: 0;
+					background-color: $w;
+					padding: 2px;
+					flex-direction: row;
+					align-items: center;
+				}
+			}
+
+			em.wpforms-error {
+				@include min(lg) {
+					position: absolute;
+				}
+			}
+
+			.wpforms-field {
+				padding: 0;
+			}
+
+			.form-input-item {
+				flex-grow: 1;
+
+				@include max(lg) {
+					width: 100%;
+				}
+			}
+
+			input {
+				width: 100%;
+				max-width: none;
+				height: 40px;
+
+				@include min(lg) {
+					height: 36px;
+				}
+			}
+
+			.wpforms-submit-container {
+				margin-top: 0;
+				height: 40px;
+				background-color: $primary;
+				@include max(lg) {
+					width: 100%;
+					text-align: center;
+					margin-top: rem(15);
+				}
+
+				button {
+					background-color: $primary !important;
+					background-position: center;
+					height: 40px;
+
+					@include min(lg) {
+						font-size: 0;
+						width: rem(40);
+						height: rem(40);
+						background-image: url("../img/paper-plane.svg");
+						background-repeat: no-repeat;
+					}
+				}
 			}
 		}
 
-		.wpcf7-form-control-wrap {
-			margin-bottom: rem(5);
+		.wpforms-container-full {
+			margin: 0;
+			form {
+				display: flex;
+				flex-direction: column;
+				border-radius: 2px;
+
+				@include min(lg) {
+					flex-direction: row;
+				}
+			}
+
+			.wpcf7-form-control-wrap {
+				margin-bottom: rem(5);
+				@include min(lg) {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.btn-form {
+			padding: rem(10);
+			border-radius: 2px;
+			height: auto;
+
 			@include min(lg) {
+				border: 1px solid $primary;
+			}
+
+			svg {
+				height: rem(20);
+				width: rem(20);
+			}
+		}
+
+		.title-form {
+			margin-bottom: rem(15);
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: rem(18);
+			margin-right: 0;
+			flex-shrink: 0;
+
+			@include min(lg) {
+				margin-right: rem(30);
 				margin-bottom: 0;
 			}
 		}
-	}
 
-	.btn-form {
-		padding: rem(10);
-		border: 1px solid $primary;
-		border-radius: 2px;
-		height: auto;
-
-		svg {
-			height: rem(20);
-			width: rem(20);
-		}
-	}
-
-	.title-form {
-		margin-bottom: rem(15);
-		text-transform: uppercase;
-		font-weight: 500;
-		font-size: rem(18);
-		margin-right: 0;
-		flex-shrink: 0;
-
-		@include min(lg) {
-			margin-right: rem(30);
-			margin-bottom: 0;
-		}
-	}
-
-	input[type=text] {
-		border-right: 1px solid $w;
-		border-radius: 0;
-		padding: rem(12 12 12 20);
-	}
-
-	[data-name="your-email"] {
-		display: inline-block;
-		position: relative;
-
-		&:after {
-			display: block;
-			content: '';
+		input[type=text] {
+			border: none;
 			border-right: 1px solid $secondary-grey;
-			height: 30px;
-			position: absolute;
-			left: 0;
-			top: 50%;
-			transform: translateY(-50%);
+			border-radius: 0;
+			padding: rem(12 12 12 20);
 		}
 
-	}
+		[data-name="your-email"] {
+			display: inline-block;
+			position: relative;
 
-	input[type=email] {
-		border: 1px solid $w;
-		border-radius: 0;
-		padding: rem(12 12 12 20);
-	}
+			&:after {
+				display: block;
+				content: '';
+				border-right: 1px solid $secondary-grey;
+				height: 30px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
 
-	input::placeholder {
-		color: $secondary-charcoal;
-		text-transform: uppercase;
-		font-size: rem(14);
+		}
+
+		input[type=email] {
+			border: 1px solid $w;
+			border-radius: 0;
+			padding: rem(12 12 12 20);
+		}
+
+		input::placeholder {
+			color: $secondary-charcoal;
+			text-transform: uppercase;
+			font-size: rem(14);
+		}
 	}
 }
 

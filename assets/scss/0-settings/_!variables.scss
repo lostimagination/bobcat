@@ -8,6 +8,9 @@ $primary: $main-red;
 $primary-hover: darken($primary, 10%);
 $secondary: #38bdf8;
 $secondary-hover: darken($secondary, 8%);
+$light-grey: #EDEEEF;
+$bg-grey: #F6F6F6;
+$accordion-row-grey: #FBFBFB;
 $footer-dark-grey: #333333;
 $background-grey:#F6F6F6;
 
@@ -102,6 +105,6 @@ $container-fluid-max-width: 1920px;
 		}
 	}
 
-	--header-height: #{rem(100)}; // needed for fixed header
-	--header-scrolled-height: #{rem(70)}; // needed for fixed header
+	--header-height: #{rem(124)}; // needed for fixed header
+	--header-scrolled-height: #{rem(85)}; // needed for fixed header
 }

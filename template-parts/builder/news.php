@@ -33,7 +33,7 @@ $link_section  = get_sub_field( 'link_section' );
 
 				<!-- the loop -->
 				<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<div class="col-lg-4">
+					<div class="col-lg-4 visible-md-up">
 						<div class="news-info">
 							<div class="news-image">
 								<?php the_post_thumbnail( 'full', array( 'class' => 'flex-image' ) ); ?>
@@ -47,12 +47,38 @@ $link_section  = get_sub_field( 'link_section' );
 						</div>
 					</div>
 				<?php endwhile; ?>
+                <div class="mobile-news-slider hidden-lg-up">
+                    <div class="swiper slider-news">
+                        <div class="swiper-wrapper">
+							<?php
+							$the_query->rewind_posts();
+							while ( $the_query->have_posts() ) : $the_query->the_post();
+								?>
+                                <div class="swiper-slide">
+                                    <div class="news-info">
+                                        <div class="news-image">
+											<?php the_post_thumbnail( 'full', array( 'class' => 'flex-image' ) ); ?>
+                                        </div>
+                                        <div class="wrapper-title-link">
+                                            <h5 class="news-title"><?php the_title(); ?></h5>
+                                            <a class="news-link" href="<?php the_permalink(); ?>">
+												<?php esc_html_e( 'weiterlesen', 'bobcat' ); ?>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+							<?php endwhile; ?>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
 				<!-- end of the loop -->
 				<?php wp_reset_postdata(); ?>
 
 			<?php endif; ?>
 
 		</div>
+
 		<?php if ( $link_section ) :
 			$link_section_target = $link_section['target'] ? $link_section['target'] : '_self'; ?>
 			<div class="button-center">
