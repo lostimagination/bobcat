@@ -57,9 +57,11 @@
                     </div>
 
                     <div class="machine-wide-card__link">
-                        <svg>
-                            <use xlink:href="arrow-button"></use>
-                        </svg>
+                        <div class="machine-wide-card__icon">
+                            <svg>
+                                <use xlink:href="#slider-arrow-right"></use>
+                            </svg>
+                        </div>
                     </div>
 
                 </div>

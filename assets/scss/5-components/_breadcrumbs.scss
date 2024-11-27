@@ -1,16 +1,36 @@
 .breadcrumbs {
 	color: $grey;
 	font-size: rem(14);
-	font-style: italic;
 	margin-bottom: rem(30);
+	padding-top: rem(10);
+
+	@include min(lg) {
+		padding-top: rem(15);
+	}
+
+	> p {
+		display: none;
+		@include min(md) {
+			display: block;
+		}
+	}
 
 	a {
-		color: inherit;
+		color: $main-black;
 		margin-right: rem(2);
+		font-size: rem(12);
 
 		&:hover {
 			color: $color-text;
 		}
+	}
+
+	span {
+		font-size: rem(12);
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 7px;
 	}
 
 	span {
@@ -38,4 +58,8 @@
 			margin: rem(0 10);
 		}
 	}
+}
+
+.breadcrumbs-section + .section {
+	padding-top: 0;
 }

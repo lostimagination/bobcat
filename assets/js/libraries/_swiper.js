@@ -13,15 +13,35 @@ const sliderConfigs = {
 		wrapperSelector: '.review-slider-wrapper',
 		options: {
 			loop: true,
-			slidesPerView: 3,
+			slidesPerView: 1,
 			spaceBetween: 30,
 			autoplay: false,
-			pagination: {
-				enabled: true,
-				options: {
-					clickable: true
+			breakpoints: {
+				320: {
+					slidesPerView: 1.2,
+					pagination: {
+						enabled: false
+					}
+				},
+				768: {
+					slidesPerView: 2,
+					pagination: {
+						enabled: false
+					}
+				},
+				1024: {
+					slidesPerView: 3,
+					pagination: {
+						enabled: true,
+						clickable: true
+					}
 				}
-			}
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				enabled: true,
+				clickable: true
+			},
 		}
 	},
 	jobs: {
@@ -31,8 +51,55 @@ const sliderConfigs = {
 			slidesPerView: 1,
 			spaceBetween: 20,
 			autoplay: false,
+			centeredSlides: false,
+			loop: false,
+			initialSlide: 0,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+					pagination: {
+						enabled: false
+					}
+				},
+				1024: {
+					slidesPerView: 1,
+					initialSlide: 1,
+					centeredSlides: false,
+					pagination: {
+						enabled: true,
+						clickable: true
+					}
+				}
+			},
+			pagination: {
+				enabled: true,
+				options: {
+					clickable: true
+				}
+			}
+		}
+	},
+	history: {
+		selector: '.slider-history',
+		wrapperSelector: '.history-slider-wrapper',
+		options: {
+			slidesPerView: 3,
+			spaceBetween: 0,
+			autoplay: false,
 			centeredSlides: true,
-			loop: true,
+			loop: false,
+			initialSlide: 1,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.2,
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				}
+			},
 			pagination: {
 				enabled: true,
 				options: {
@@ -45,7 +112,15 @@ const sliderConfigs = {
 		selector: '.machine-gallery-slider',
 		wrapperSelector: '.machine-gallery',
 		options: {
-			slidesPerView: 3,
+			slidesPerView: 1.3,
+			breakpoints: {
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+				}
+			},
 			spaceBetween: 20,
 			autoplay: false,
 			loop: true,
@@ -58,7 +133,7 @@ const sliderConfigs = {
 		selector: '.related-product-gallery-slider',
 		wrapperSelector: '.related-product-gallery',
 		options: {
-			slidesPerView: 3,
+			slidesPerView: 1.3,
 			spaceBetween: 30,
 			autoplay: false,
 			loop: true,
@@ -67,6 +142,37 @@ const sliderConfigs = {
 				options: {
 					clickable: true
 				}
+			},
+			breakpoints: {
+				320: {
+					slidesPerView: 1.3,
+					pagination: {
+						enabled: false,
+					},
+				},
+				768: {
+					slidesPerView: 2,
+				},
+				1024: {
+					slidesPerView: 3,
+					pagination: {
+						enabled: true,
+					},
+				}
+			},
+		}
+	},
+	news: {
+		selector: '.slider-news',
+		wrapperSelector: '.mobile-news-slider',
+		options: {
+			slidesPerView: 1.2,
+			spaceBetween: 8,
+			autoplay: false,
+			pagination: {
+				el: '.swiper-pagination',
+				enabled: false,
+				clickable: true
 			}
 		}
 	}
@@ -98,6 +204,15 @@ const initializeSliderType = (config) => {
 				},
 			},
 		};
+
+		if (slider.classList.contains('slider-history')) {
+			const slides = slider.querySelectorAll('.swiper-slide');
+			const totalSlides = slides.length;
+			if (totalSlides > 0) {
+				const middleIndex = Math.floor((totalSlides - 1) / 2);
+				swiperConfig.initialSlide = middleIndex;
+			}
+		}
 
 		if (config.options.pagination?.enabled) {
 			swiperConfig.pagination = {

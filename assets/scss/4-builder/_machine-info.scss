@@ -10,6 +10,10 @@
 
  &__label {
   padding-right: rem(10);
+
+  @include max(lg) {
+   width: 100%;
+  }
  }
 
  &__item {
@@ -18,6 +22,17 @@
   border-radius: rem(6);
   margin-bottom: 0;
   color: $b;
+  font-size: rem(18);
+
+  @include min(lg) {
+   font-size: rem(20);
+  }
+
+  &.active {
+   background-color: $light-grey;
+   border-color: $secondary-tan;
+   border-bottom: 1px solid $secondary-tan;
+  }
  }
 
  &--single {

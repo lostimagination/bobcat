@@ -14,7 +14,7 @@ get_header();
 the_post();
 $post_object = get_queried_object();
 ?>
-<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+	<div class="breadcrumbs-section container"><?php get_template_part( 'template-parts/breadcrumbs' ); ?></div>
 
 <?php get_template_part('template-parts/machine-intro'); ?>
 

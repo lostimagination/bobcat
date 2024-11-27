@@ -12,7 +12,7 @@
 	line-height: 1;
 	text-transform: uppercase;
 	border: 1px solid $primary;
-	//border-radius: $radius;
+	border-radius: 2px;
 	padding: rem(0 24);
 	text-align: center;
 	cursor: pointer;
@@ -165,4 +165,16 @@ input[type="submit"] {
 .btn-full {
 	width: 100%;
 	text-align: center;
+}
+
+.max-lg-flex {
+	@include max(lg) {
+		display: flex;
+	}
+}
+
+.max-lg-full {
+	@include max(lg) {
+		width: 100%;
+	}
 }

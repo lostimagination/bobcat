@@ -1,10 +1,9 @@
 // To top button
 #to-top {
 	@include tr;
-	display: inline-flex;
-	background-color: $primary;
-	width: rem(44);
-	height: rem(44);
+	background-color: $w;
+	width: rem(40);
+	height: rem(40);
 	border-radius: $radius;
 	cursor: pointer;
 	position: fixed;
@@ -13,9 +12,17 @@
 	opacity: 0;
 	visibility: hidden;
 	z-index: 90;
+	border: 2px solid $primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
 	&:hover {
 		background-color: $primary-hover;
+
+		svg {
+			fill: $w;
+		}
 	}
 
 	&.show {
@@ -24,8 +31,8 @@
 	}
 
 	svg {
-		width: rem(44);
-		height: rem(44);
-		fill: $w;
+		width: rem(20);
+		height: rem(20);
+		fill: $primary;
 	}
 }

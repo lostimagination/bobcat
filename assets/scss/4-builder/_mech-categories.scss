@@ -1,6 +1,7 @@
 .mech-category-section {
  + .mech-category-section {
   position: relative;
+
   .container {
    position: relative;
   }
@@ -9,9 +10,20 @@
    border: 1px solid $secondary-tan;
    position: absolute;
    top: -60px;
-   left: 50px;
-   right: 50px;
+   left: 15px;
+   right: 15px;
+
+   @include min(lg) {
+    left: 50px;
+    right: 50px;
+   }
   }
+ }
+}
+
+.default-content {
+ + .mech-category-section {
+  padding-top: 0;
  }
 }
 
@@ -70,6 +82,7 @@
 }
 
 .mech-categories-button {
+ margin-top: rem(30);
  @include min(lg) {
   margin-top: rem(50);
  }

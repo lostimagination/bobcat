@@ -22,7 +22,7 @@ $links_label = get_sub_field('links_label')
         	    $anchor_slug = get_sub_field('anchor_slug');
         	  ?>
 
-             <a href="#<?php echo esc_url($anchor_slug); ?>" class="anchor-list__item h5">
+             <a href="#<?php echo $anchor_slug; ?>" class="anchor-list__item h5">
                  <?php echo esc_html($anchor_name); ?>
              </a>
 

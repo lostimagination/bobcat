@@ -20,8 +20,8 @@ $link_section  = get_sub_field( 'link_section' )
 		<div class="row">
 			<?php if ( have_rows( 'counter_card' ) ) : ?>
 				<?php while ( have_rows( 'counter_card' ) ) : the_row(); ?>
-					<div class="col-lg-4">
-						<div class="counter-card">
+					<div class="col-md-6 col-lg-4">
+						<div class="counter-card js-counter">
 							<?php
 							$label          = get_sub_field( 'label' );
 							$number_card    = get_sub_field( 'number_card' );
@@ -33,8 +33,8 @@ $link_section  = get_sub_field( 'link_section' )
 								<h6 class="counter-card__label"><?php echo esc_html( $label ) ?></h6>
 							<?php endif; ?>
 							<div class="number-wrapper">
-								<?php if ( $number_card ) : ?>
-									<p><?php echo( $number_card ) ?></p>
+								<?php if ( isset($number_card) ) : ?>
+									<p><?php echo ( (int)$number_card ); ?></p>
 								<?php endif; ?>
 
 								<?php if ( $symbol_number ) : ?>

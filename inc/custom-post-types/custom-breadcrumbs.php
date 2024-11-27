@@ -86,13 +86,14 @@ function custom_baumaschinen_breadcrumbs($links) {
 }
 add_filter('wpseo_breadcrumb_links', 'custom_baumaschinen_breadcrumbs');
 
-/**
- * Optional: Add custom separator for breadcrumbs
- */
-function custom_breadcrumb_separator($separator) {
-	return '<span class="breadcrumb-separator">&gt;</span>';
+add_filter( 'wpseo_breadcrumb_separator', 'custom_breadcrumb_separator' );
+function custom_breadcrumb_separator( $separator ): string {
+	$svg_icon = '<svg width="5" height="7" viewBox="0 0 5 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.719504 6.5105H1.54217C1.64434 6.5105 1.7425 6.46984 1.81467 6.3975L4.43967 3.7725C4.59017 3.622 4.59017 3.378 4.43967 3.2275L1.81467 0.602498C1.7425 0.530165 1.64434 0.489498 1.54217 0.489665C1.379 0.489665 1.02434 0.489669 0.719504 0.489502C0.563504 0.489502 0.423004 0.583498 0.363338 0.727498C0.303671 0.871498 0.336671 1.03733 0.446838 1.1475L2.7625 3.46317C2.78284 3.4835 2.78284 3.5165 2.7625 3.53683L0.446838 5.8525C0.336671 5.96267 0.303671 6.1285 0.363338 6.2725C0.423004 6.4165 0.563504 6.5105 0.719504 6.5105Z" fill="black"/>
+</svg>';
+
+	return $svg_icon;
 }
-add_filter('wpseo_breadcrumb_separator', 'custom_breadcrumb_separator');
 
 /**
  * Optional: Add schema markup for breadcrumbs

@@ -9,7 +9,7 @@
  */
 
 // Enable strict typing mode.
-declare( strict_types = 1 );
+declare( strict_types=1 );
 
 if ( ! function_exists( 'it_setup' ) ) {
 
@@ -95,8 +95,8 @@ if ( ! function_exists( 'it_set_content_width' ) ) {
 	 *
 	 * Priority 0 to make it available to lower priority callbacks.
 	 *
-	 * @global int $content_width
 	 * @return void
+	 * @global int $content_width
 	 */
 	function it_set_content_width(): void {
 		$GLOBALS['content_width'] = apply_filters( 'it_content_width', 1130 );
@@ -113,7 +113,7 @@ if ( ! function_exists( 'it_slug_body_class' ) ) {
 	 *
 	 * @link https://developer.wordpress.org/reference/functions/body_class/
 	 *
-	 * @param  string[] $classes An array of body classes.
+	 * @param string[] $classes An array of body classes.
 	 *
 	 * @return string[] The modified array of body classes.
 	 */

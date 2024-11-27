@@ -16,6 +16,7 @@ $background_type = get_sub_field( 'background_type' ) ? 'section-bg-grey' : '';
 <?php if ( have_rows( 'columns' ) ) : ?>
     <section class="m-text-columns section section-p-small <?php echo esc_attr( $background_type ); ?>">
         <div class="container">
+	        <?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => '' ) ) ?>
             <div class="row justify-content-center">
 				<?php
 				while ( have_rows( 'columns' ) ) : the_row();

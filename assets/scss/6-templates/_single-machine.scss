@@ -5,6 +5,11 @@
 .machine-post-image {
  position: relative;
  border: 1px solid $light-grey;
+ display: none;
+
+ @include min(lg) {
+  display: block;
+ }
 
  &:after {
   content: '';
@@ -33,6 +38,12 @@
   width: rem(20);
   height: rem(20);
  }
+
+ .btn-group {
+  @include max(md) {
+  flex-direction: column;
+  }
+ }
 }
 
 .btn-group {
@@ -50,10 +61,12 @@
 
 .machine-gallery {
  position: relative;
- padding: rem(10 15);
+ padding: 0;
+ margin-right: -15px;
 
  @include min(lg) {
   padding: rem(10 42);
+  margin-right: 0;
  }
 
  .arrow-left,
@@ -62,8 +75,12 @@
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  display: flex;
+  display: none;
   justify-content: flex-end;
+
+  @include min(lg) {
+   display: flex;
+  }
 
   svg {
    height: 8px;
@@ -99,3 +116,20 @@
   object-fit: cover;
  }
 }
+
+.machine-intro-left {
+ display: flex;
+ flex-direction: column;
+ height: 100%;
+
+ &__info {
+  flex-grow: 1;
+ }
+}
+
+@include min(lg) {
+ .featured-machine-slide-image {
+  display: none !important;
+ }
+}
+

@@ -36,6 +36,10 @@
 
 .related-product-gallery {
  position: relative;
+ margin-right: -15px;
+ @include min(lg) {
+  margin-right: 0;
+ }
 
  .related-product-gallery-slider {
   padding-bottom: 1px;
@@ -51,8 +55,12 @@
   width: 60px;
   height: 60px;
   border-radius: 2px;
-  display: flex;
+  display: none;
   justify-content: flex-end;
+
+  @include min(lg) {
+   display: flex;
+  }
 
   svg {
    height: 16px;

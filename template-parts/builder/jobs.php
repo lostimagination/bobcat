@@ -14,9 +14,9 @@
 							<div class="swiper-slide">
 								<div class="job">
 									<div class="row">
-										<div class="col-lg-4">
+										<div class=" col-md-5 col-lg-4 job-info-col">
 											<div class="job-info">
-												<?php get_template_part( 'template-parts/builder/components/title' ) ?>
+												<?php get_template_part( 'template-parts/builder/components/title', null, array( 'class' => '' ) ) ?>
 
 												<?php if ( $paragraph ) : ?>
 													<div class="job-paragraph">
@@ -34,7 +34,7 @@
 												<?php endif; ?>
 											</div>
 										</div>
-										<div class="col-lg-8">
+										<div class="col-md-7 col-lg-8">
 											<?php if ( $image_section ) : ?>
 												<div class="job-image">
 													<?php echo wp_get_attachment_image( $image_section['id'], 'medium', false, array( 'class' => 'flex-image' ) ); ?>

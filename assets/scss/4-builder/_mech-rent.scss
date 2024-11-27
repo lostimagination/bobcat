@@ -20,11 +20,15 @@
 }
 
 .mech-rent__info {
- padding: rem(60 40);
+ padding: rem(10 10 40);
  display: flex;
  flex-direction: column;
  align-items: flex-start;
  height: 100%;
+
+ @include min(lg) {
+  padding: rem(60 40);
+ }
 
  p {
   flex-grow: 1;
